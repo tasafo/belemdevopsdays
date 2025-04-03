@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -31,20 +30,17 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
-          <Link to="/" className="text-primary font-bold text-2xl flex items-center">
+          <Link to="/" className="text-primary font-bold text-xl flex items-center flex-shrink-0">
             <img 
-              src="/lovable-uploads/ac658e29-076d-46c0-9e08-e62aba43a372.png" 
+              src="/logo.png" 
               alt="DevOpsDays Belém Logo" 
-              className="h-12 mr-2" 
+              className="h-8 sm:h-12 mr-2" 
             />
-            <span className="hidden md:inline">DevOpsDays Belém 2025</span>
+            <span className="hidden sm:inline">DevOpsDays Belém 2025</span>
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-6">
-            <Link to="/" className="text-gray-800 hover:text-primary transition-colors">
-              Home
-            </Link>
+          <div className="hidden lg:flex items-center space-x-6">
             <Link to="/programa" className="text-gray-800 hover:text-primary transition-colors">
               Programação
             </Link>
@@ -68,7 +64,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-800 hover:text-primary focus:outline-none"
@@ -80,7 +76,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden mt-4 bg-white rounded-lg shadow-lg p-4 absolute left-4 right-4 animate-fade-in">
+          <div className="lg:hidden mt-4 bg-white rounded-lg shadow-lg p-4 left-4 right-4 top-full z-50">
             <div className="flex flex-col space-y-4">
               <Link 
                 to="/" 

@@ -12,8 +12,18 @@ interface TeamMember {
 }
 
 const TeamMembers = () => {
-  const shuffledMembers = [...teamData.team_members || []].sort(() => Math.random() - 0.5);
-  const [members] = useState<TeamMember[]>(shuffledMembers);
+  const members = [...teamData.team_members || []].sort(() => Math.random() - 0.5);
+  const [apiCarousel, setApiCarousel] = useState<any>(null);
+
+  useEffect(() => {
+    if (!apiCarousel || members.length <= 3) return;
+    
+    const interval = setInterval(() => {
+      apiCarousel.scrollNext();
+    }, 2400);
+    
+    return () => clearInterval(interval);
+  }, [apiCarousel, members.length]);
 
   return (
     <section className="py-20 bg-white">
@@ -27,6 +37,7 @@ const TeamMembers = () => {
         
         <Carousel 
           className="w-full max-w-5xl mx-auto"
+          setApi={setApiCarousel}
           opts={{
             align: "start",
             loop: true,
@@ -43,8 +54,8 @@ const TeamMembers = () => {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <h3 className="font-bold text-lg mb-1">{member.name}</h3>
-                  <p className="text-gray-600 mb-3">{member.employer}</p>
+                  <h3 className="font-bold text-lg mb-1 text-ellipsis overflow-hidden whitespace-nowrap">{member.name}</h3>
+                  <p className="text-gray-600 mb-3 text-ellipsis overflow-hidden whitespace-nowrap">{member.employer}</p>
                   <div className="flex justify-center space-x-3">
                     {member.twitter && (
                       <a 

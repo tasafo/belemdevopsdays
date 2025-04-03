@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { Twitter, Linkedin, Github } from 'lucide-react';
-import SponsorsSection from '@/components/SponsorsSection';
-import CallToAction from '@/components/CallToAction';
+import { Twitter, Linkedin, Github, Send } from 'lucide-react';
+import EmptyState from '@/components/EmptyState';
 import speakersData from '@/data/speakers.json';
 
 interface Speaker {
@@ -21,6 +20,26 @@ interface Speaker {
 
 const Speakers = () => {
   const speakers: Speaker[] = speakersData.speakers || [];
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
+  const handleSubmitTalk = () => {
+    window.location.href = 'https://www.papercall.io/devopsdaysbelem2025';
+  };
+
+  if (speakers.length === 0) {
+    return (
+      <EmptyState
+        title="Palestrantes"
+        heading="Seja um Palestrante"
+        description="Nossa lista de palestrantes ainda está sendo definida. Que tal fazer parte dela? Submeta sua palestra e compartilhe seu conhecimento com a comunidade DevOps."
+        buttonText="Submeter Palestra"
+        onButtonClick={handleSubmitTalk}
+      />
+    );
+  }
 
   return (
     <div className="min-h-screen pt-24 pb-12">
@@ -78,9 +97,6 @@ const Speakers = () => {
           ))}
         </div>
       </div>
-
-      <SponsorsSection />
-      <CallToAction />
     </div>
   );
 };

@@ -1,10 +1,11 @@
 
 import { useEffect } from 'react';
 import { Button } from "@/components/ui/button";
+import TeamMembers from '@/components/TeamMembers';
 
 const Contact = () => {
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
   return (
@@ -91,6 +92,8 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
+      <TeamMembers />
     </div>
   );
 };

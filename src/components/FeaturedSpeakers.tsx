@@ -34,7 +34,7 @@ const FeaturedSpeakers = () => {
     
     const interval = setInterval(() => {
       apiCarousel.scrollNext();
-    }, 3000);
+    }, 2400);
     
     return () => clearInterval(interval);
   }, [apiCarousel, speakers.length]);

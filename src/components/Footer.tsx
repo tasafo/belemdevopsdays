@@ -13,17 +13,17 @@ const Footer = () => {
               Belém, Pará, Brasil
             </p>
             <div className="flex space-x-4">
-              <a 
-                href="https://twitter.com/tasafo" 
-                target="_blank" 
+              <a
+                href="https://twitter.com/tasafo"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-secondary-light transition-colors"
                 aria-label="Twitter"
               >
                 <Twitter size={20} />
               </a>
-              <a 
-                href="mailto:belem@devopsdays.org" 
+              <a
+                href="mailto:belem@devopsdays.org"
                 className="hover:text-secondary-light transition-colors"
                 aria-label="Email"
               >
@@ -72,18 +72,23 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4 text-left">Eventos Anteriores</h3>
             <ul className="space-y-2 text-left">
               <li>
-                <a href="#" className="hover:text-secondary-light transition-colors">
-                  DevOpsDays Belém 2023
+                <a href="https://devopsdays.org/events/2018-belem/welcome/" className="hover:text-secondary-light transition-colors">
+                  Belém 2018
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-secondary-light transition-colors">
-                  DevOpsDays Belém 2022
+                <a href="https://devopsdays.org/events/2019-belem/welcome/" className="hover:text-secondary-light transition-colors">
+                  Belém 2019
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-secondary-light transition-colors">
-                  DevOpsDays Belém 2019
+                <a href="https://devopsdays.org/events/2022-belem/welcome/" className="hover:text-secondary-light transition-colors">
+                  Belém 2022
+                </a>
+              </li>
+              <li>
+                <a href="https://devopsdays.org/events/2023-belem/" className="hover:text-secondary-light transition-colors">
+                  Belém 2023
                 </a>
               </li>
             </ul>
@@ -94,7 +99,7 @@ const Footer = () => {
             <p className="mb-2 text-left">
               Para dúvidas ou informações:
             </p>
-            <a 
+            <a
               href="mailto:belem@devopsdays.org"
               className="text-secondary-light hover:underline"
             >

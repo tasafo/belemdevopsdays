@@ -1,38 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import talksData from '@/data/talks.json';
 import speakersData from '@/data/speakers.json';
-
-interface Talk {
-  id: string;
-  title: string;
-  speaker_id: string;
-  time: string;
-  type: string;
-  track: string;
-  description: string;
-}
-
-interface Speaker {
-  id: string;
-  name: string;
-  company: string;
-}
-
-interface Day {
-  talks: Talk[];
-}
-
-interface TalksData {
-  days: Day[];
-}
+import { Talk, Speaker } from '@/types/talks';
 
 const ScheduleHighlights = () => {
-  const allTalks = talksData.days.flatMap((day) => 
-    day.talks.filter((talk) => talk.type === "talk")
-  );
+  const allTalks = talksData.talks.filter((talk) => talk.type === "talk");
   
   const shuffled = [...allTalks].sort(() => Math.random() - 0.5);
   const selectedTalks = shuffled.slice(0, 3);

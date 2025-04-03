@@ -4,27 +4,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft } from 'lucide-react';
 import speakersData from '@/data/speakers.json';
 import talksData from '@/data/talks.json';
-
-interface Speaker {
-  id: string;
-  name: string;
-  bio: string;
-  company: string;
-  photo: string;
-  social: {
-    twitter: string;
-    linkedin: string;
-    github: string;
-  };
-}
-
-interface Talk {
-  id: string;
-  title: string;
-  speaker_id: string;
-  time: string;
-  description: string;
-}
+import { Speaker, Talk } from '@/types/talks';
+import EmptyState from '@/components/EmptyState';
 
 const SpeakerDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -33,18 +14,24 @@ const SpeakerDetail = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
+  useEffect(() => {
     if (id) {
       const speakerData = speakersData.speakers.find((s: Speaker) => s.id === id) || null;
       setSpeaker(speakerData);
 
       if (speakerData) {
-        const speakerTalks = talksData.days.flatMap((day: any) => 
-          day.talks.filter((talk: any) => talk.speaker_id === id)
-        );
+        const speakerTalks = talksData.talks.filter((talk) => talk.speaker_id === id);
         setTalks(speakerTalks);
       }
     }
   }, [id]);
+
+  const handleBackToSpeakers = () => {
+    window.location.href = '/palestrantes';
+  };
 
   if (loading) {
     return (
@@ -63,20 +50,14 @@ const SpeakerDetail = () => {
 
   if (!speaker) {
     return (
-      <div className="min-h-screen pt-24 pb-12">
-        <div className="container mx-auto px-4">
-          <div className="text-center py-12">
-            <h1 className="text-3xl font-bold mb-4">Palestrante não encontrado</h1>
-            <p className="mb-6">O palestrante que você está procurando não existe.</p>
-            <Link to="/palestrantes">
-              <Button className="bg-primary hover:bg-primary-dark text-white">
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Voltar para Palestrantes
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </div>
+      <EmptyState
+        title="Palestrante não encontrado"
+        heading="Ops! Página não encontrada"
+        description="O palestrante que você está procurando não existe."
+        buttonText="Voltar para Palestrantes"
+        onButtonClick={handleBackToSpeakers}
+        buttonIcon={<ArrowLeft className="w-4 h-4 mr-2" />}
+      />
     );
   }
 

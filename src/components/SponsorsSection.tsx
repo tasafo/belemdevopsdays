@@ -19,13 +19,7 @@ interface SponsorLevel {
 
 const SponsorsSection = () => {
   const sponsorLevels = sponsorsData.sponsor_levels || [];
-
-  const mainLevels = sponsorLevels.filter(
-    level => level.id !== 'community'
-  );
   
-  const communityLevel = sponsorLevels.find(level => level.id === 'community');
-
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -38,7 +32,7 @@ const SponsorsSection = () => {
         
         {/* Sponsors displayed vertically */}
         <div className="space-y-16">
-          {mainLevels.map((level) => (
+          {sponsorLevels.map((level) => (
             <div key={level.id} className="text-center">
               <h3 className="text-xl font-bold mb-6 text-primary-dark">{level.label}</h3>
               
@@ -50,15 +44,17 @@ const SponsorsSection = () => {
                       href={sponsor.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block hover:opacity-80 transition-opacity"
+                      className="block w-48 hover:opacity-80 hover:scale-110 transition-transform duration-300"
                     >
-                      <img 
-                        src={sponsor.logo} 
-                        alt={sponsor.name} 
-                        className="max-h-24 max-w-full mx-auto"
-                        loading="lazy"
-                      />
-                      <p className="mt-2 text-gray-700">{sponsor.name}</p>
+                      <div className="h-24 w-48 mx-auto flex items-center justify-center bg-opacity-80 bg-white rounded-xl p-4">
+                        <img 
+                          src={sponsor.logo} 
+                          alt={sponsor.name} 
+                          className="max-h-20 max-w-40 object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                      <p className="mt-2 text-gray-700 text-center text-sm truncate">{sponsor.name}</p>
                     </a>
                   ))}
                 </div>
@@ -70,32 +66,6 @@ const SponsorsSection = () => {
             </div>
           ))}
         </div>
-        
-        {/* Community Sponsors */}
-        {communityLevel && communityLevel.sponsors.length > 0 && (
-          <div className="mt-16">
-            <h3 className="text-xl font-bold mb-6 text-center">Comunidades Apoiadoras</h3>
-            <div className="flex flex-wrap justify-center gap-10">
-              {communityLevel.sponsors.map((sponsor) => (
-                <a 
-                  key={sponsor.id}
-                  href={sponsor.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block hover:opacity-80 transition-opacity"
-                >
-                  <img 
-                    src={sponsor.logo} 
-                    alt={sponsor.name} 
-                    className="max-h-20 max-w-full mx-auto"
-                    loading="lazy"
-                  />
-                  <p className="mt-2 text-center text-gray-700">{sponsor.name}</p>
-                </a>
-              ))}
-            </div>
-          </div>
-        )}
         
         <div className="text-center mt-16">
           <Link to="/patrocinio">
