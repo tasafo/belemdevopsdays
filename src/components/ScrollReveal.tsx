@@ -1,7 +1,7 @@
 
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
-const ScrollReveal = () => {
+const ScrollReveal: React.FC = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
