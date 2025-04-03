@@ -25,20 +25,7 @@ const LocationSection = () => {
       try {
         const response = await fetch('/data/location.json');
         const data = await response.json();
-        
-        // Override with Patio Belém coordinates
-        const patioBelem = {
-          ...data,
-          venue: "Shopping Pátio Belém",
-          address: "Travessa Padre Eutíquio, 1078 - Batista Campos",
-          coordinates: {
-            lat: -1.4516813,
-            lng: -48.4809826
-          },
-          description: "O evento será realizado no Shopping Pátio Belém, localizado no coração da cidade, com fácil acesso por transporte público e amplo estacionamento."
-        };
-        
-        setLocation(patioBelem);
+        setLocation(data);
       } catch (error) {
         console.error('Error fetching location:', error);
         setLocation(null);

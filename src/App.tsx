@@ -16,6 +16,8 @@ import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollReveal from "./components/ScrollReveal";
+import SponsorsSection from "./components/SponsorsSection";
+import CallToAction from "./components/CallToAction";
 
 // Create a client
 const queryClient = new QueryClient();
@@ -38,6 +40,8 @@ const App: React.FC = () => (
             <Route path="/contato" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <SponsorsSection />
+          <CallToAction />
           <Footer />
           <ScrollReveal />
         </BrowserRouter>

@@ -2,8 +2,14 @@
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import SponsorsSection from '@/components/SponsorsSection';
-import CallToAction from '@/components/CallToAction';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 interface Sponsor {
   id: string;
@@ -68,117 +74,117 @@ const Sponsors = () => {
             
             <h2 className="text-2xl font-bold mb-6 text-primary">Níveis de Patrocínio</h2>
             
-            <div className="overflow-auto">
-              <table className="w-full border-collapse">
-                <thead>
-                  <tr className="bg-gray-100">
-                    <th className="border px-4 py-3 text-left">Benefícios</th>
-                    <th className="border px-4 py-3 text-center">Safo¹</th>
-                    <th className="border px-4 py-3 text-center">Bronze</th>
-                    <th className="border px-4 py-3 text-center">Prata</th>
-                    <th className="border px-4 py-3 text-center">Ouro</th>
-                    <th className="border px-4 py-3 text-center">Platina</th>
-                    <th className="border px-4 py-3 text-center">Diamante</th>
-                    <th className="border px-4 py-3 text-center">Comunidade²</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="border px-4 py-3 font-medium">Status</td>
-                    <td className="border px-4 py-3 text-center">
+            <div className="overflow-x-auto">
+              <Table>
+                <TableHeader>
+                  <TableRow className="bg-gray-100">
+                    <TableHead className="whitespace-nowrap">Benefícios</TableHead>
+                    <TableHead className="text-center whitespace-nowrap">Safo¹</TableHead>
+                    <TableHead className="text-center whitespace-nowrap">Bronze</TableHead>
+                    <TableHead className="text-center whitespace-nowrap">Prata</TableHead>
+                    <TableHead className="text-center whitespace-nowrap">Ouro</TableHead>
+                    <TableHead className="text-center whitespace-nowrap">Platina</TableHead>
+                    <TableHead className="text-center whitespace-nowrap">Diamante</TableHead>
+                    <TableHead className="text-center whitespace-nowrap">Comunidade²</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  <TableRow>
+                    <TableCell className="font-medium whitespace-nowrap">Status</TableCell>
+                    <TableCell className="text-center">
                       <span className="bg-green-100 text-green-800 text-xs font-medium px-2 py-0.5 rounded">Disponível</span>
-                    </td>
-                    <td className="border px-4 py-3 text-center">
+                    </TableCell>
+                    <TableCell className="text-center">
                       <span className="bg-green-100 text-green-800 text-xs font-medium px-2 py-0.5 rounded">Disponível</span>
-                    </td>
-                    <td className="border px-4 py-3 text-center">
+                    </TableCell>
+                    <TableCell className="text-center">
                       <span className="bg-green-100 text-green-800 text-xs font-medium px-2 py-0.5 rounded">Disponível</span>
-                    </td>
-                    <td className="border px-4 py-3 text-center">
+                    </TableCell>
+                    <TableCell className="text-center">
                       <span className="bg-green-100 text-green-800 text-xs font-medium px-2 py-0.5 rounded">Disponível</span>
-                    </td>
-                    <td className="border px-4 py-3 text-center">
+                    </TableCell>
+                    <TableCell className="text-center">
                       <span className="bg-green-100 text-green-800 text-xs font-medium px-2 py-0.5 rounded">Disponível</span>
-                    </td>
-                    <td className="border px-4 py-3 text-center">
+                    </TableCell>
+                    <TableCell className="text-center">
                       <span className="bg-green-100 text-green-800 text-xs font-medium px-2 py-0.5 rounded">Disponível</span>
-                    </td>
-                    <td className="border px-4 py-3 text-center">
+                    </TableCell>
+                    <TableCell className="text-center">
                       <span className="bg-green-100 text-green-800 text-xs font-medium px-2 py-0.5 rounded">Disponível</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="border px-4 py-3 font-medium">Inscrições para o evento</td>
-                    <td className="border px-4 py-3 text-center">(preço especial)¹</td>
-                    <td className="border px-4 py-3 text-center">1</td>
-                    <td className="border px-4 py-3 text-center">3</td>
-                    <td className="border px-4 py-3 text-center">5</td>
-                    <td className="border px-4 py-3 text-center">10</td>
-                    <td className="border px-4 py-3 text-center">15</td>
-                    <td className="border px-4 py-3 text-center">-</td>
-                  </tr>
-                  <tr>
-                    <td className="border px-4 py-3 font-medium">Espaço para divulgação no local</td>
-                    <td className="border px-4 py-3 text-center">-</td>
-                    <td className="border px-4 py-3 text-center">-</td>
-                    <td className="border px-4 py-3 text-center">-</td>
-                    <td className="border px-4 py-3 text-center">-</td>
-                    <td className="border px-4 py-3 text-center">-</td>
-                    <td className="border px-4 py-3 text-center">✓</td>
-                    <td className="border px-4 py-3 text-center">-</td>
-                  </tr>
-                  <tr>
-                    <td className="border px-4 py-3 font-medium">Logo no site do evento</td>
-                    <td className="border px-4 py-3 text-center">✓</td>
-                    <td className="border px-4 py-3 text-center">✓</td>
-                    <td className="border px-4 py-3 text-center">✓</td>
-                    <td className="border px-4 py-3 text-center">✓</td>
-                    <td className="border px-4 py-3 text-center">✓</td>
-                    <td className="border px-4 py-3 text-center">✓</td>
-                    <td className="border px-4 py-3 text-center">✓</td>
-                  </tr>
-                  <tr>
-                    <td className="border px-4 py-3 font-medium">Logo nos materiais de marketing</td>
-                    <td className="border px-4 py-3 text-center">-</td>
-                    <td className="border px-4 py-3 text-center">-</td>
-                    <td className="border px-4 py-3 text-center">✓</td>
-                    <td className="border px-4 py-3 text-center">✓</td>
-                    <td className="border px-4 py-3 text-center">✓</td>
-                    <td className="border px-4 py-3 text-center">✓</td>
-                    <td className="border px-4 py-3 text-center">-</td>
-                  </tr>
-                  <tr>
-                    <td className="border px-4 py-3 font-medium">Destaque no Banner</td>
-                    <td className="border px-4 py-3 text-center">-</td>
-                    <td className="border px-4 py-3 text-center">-</td>
-                    <td className="border px-4 py-3 text-center">-</td>
-                    <td className="border px-4 py-3 text-center">-</td>
-                    <td className="border px-4 py-3 text-center">✓</td>
-                    <td className="border px-4 py-3 text-center">✓</td>
-                    <td className="border px-4 py-3 text-center">-</td>
-                  </tr>
-                  <tr>
-                    <td className="border px-4 py-3 font-medium">Material de marketing nos kits</td>
-                    <td className="border px-4 py-3 text-center">-</td>
-                    <td className="border px-4 py-3 text-center">-</td>
-                    <td className="border px-4 py-3 text-center">✓</td>
-                    <td className="border px-4 py-3 text-center">✓</td>
-                    <td className="border px-4 py-3 text-center">✓</td>
-                    <td className="border px-4 py-3 text-center">✓</td>
-                    <td className="border px-4 py-3 text-center">-</td>
-                  </tr>
-                  <tr>
-                    <td className="border px-4 py-3 font-medium">Divulgação nas Redes Sociais</td>
-                    <td className="border px-4 py-3 text-center">✓</td>
-                    <td className="border px-4 py-3 text-center">✓</td>
-                    <td className="border px-4 py-3 text-center">✓</td>
-                    <td className="border px-4 py-3 text-center">✓</td>
-                    <td className="border px-4 py-3 text-center">✓</td>
-                    <td className="border px-4 py-3 text-center">✓</td>
-                    <td className="border px-4 py-3 text-center">✓</td>
-                  </tr>
-                </tbody>
-              </table>
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium whitespace-nowrap">Inscrições para o evento</TableCell>
+                    <TableCell className="text-center">(preço especial)¹</TableCell>
+                    <TableCell className="text-center">1</TableCell>
+                    <TableCell className="text-center">3</TableCell>
+                    <TableCell className="text-center">5</TableCell>
+                    <TableCell className="text-center">10</TableCell>
+                    <TableCell className="text-center">15</TableCell>
+                    <TableCell className="text-center">-</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium whitespace-nowrap">Espaço para divulgação no local</TableCell>
+                    <TableCell className="text-center">-</TableCell>
+                    <TableCell className="text-center">-</TableCell>
+                    <TableCell className="text-center">-</TableCell>
+                    <TableCell className="text-center">-</TableCell>
+                    <TableCell className="text-center">-</TableCell>
+                    <TableCell className="text-center">✓</TableCell>
+                    <TableCell className="text-center">-</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium whitespace-nowrap">Logo no site do evento</TableCell>
+                    <TableCell className="text-center">✓</TableCell>
+                    <TableCell className="text-center">✓</TableCell>
+                    <TableCell className="text-center">✓</TableCell>
+                    <TableCell className="text-center">✓</TableCell>
+                    <TableCell className="text-center">✓</TableCell>
+                    <TableCell className="text-center">✓</TableCell>
+                    <TableCell className="text-center">✓</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium whitespace-nowrap">Logo nos materiais de marketing</TableCell>
+                    <TableCell className="text-center">-</TableCell>
+                    <TableCell className="text-center">-</TableCell>
+                    <TableCell className="text-center">✓</TableCell>
+                    <TableCell className="text-center">✓</TableCell>
+                    <TableCell className="text-center">✓</TableCell>
+                    <TableCell className="text-center">✓</TableCell>
+                    <TableCell className="text-center">-</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium whitespace-nowrap">Destaque no Banner</TableCell>
+                    <TableCell className="text-center">-</TableCell>
+                    <TableCell className="text-center">-</TableCell>
+                    <TableCell className="text-center">-</TableCell>
+                    <TableCell className="text-center">-</TableCell>
+                    <TableCell className="text-center">✓</TableCell>
+                    <TableCell className="text-center">✓</TableCell>
+                    <TableCell className="text-center">-</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium whitespace-nowrap">Material de marketing nos kits</TableCell>
+                    <TableCell className="text-center">-</TableCell>
+                    <TableCell className="text-center">-</TableCell>
+                    <TableCell className="text-center">✓</TableCell>
+                    <TableCell className="text-center">✓</TableCell>
+                    <TableCell className="text-center">✓</TableCell>
+                    <TableCell className="text-center">✓</TableCell>
+                    <TableCell className="text-center">-</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium whitespace-nowrap">Divulgação nas Redes Sociais</TableCell>
+                    <TableCell className="text-center">✓</TableCell>
+                    <TableCell className="text-center">✓</TableCell>
+                    <TableCell className="text-center">✓</TableCell>
+                    <TableCell className="text-center">✓</TableCell>
+                    <TableCell className="text-center">✓</TableCell>
+                    <TableCell className="text-center">✓</TableCell>
+                    <TableCell className="text-center">✓</TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
             </div>
             
             <div className="mt-6 text-sm">
@@ -253,9 +259,6 @@ const Sponsors = () => {
           </>
         )}
       </div>
-      
-      <SponsorsSection />
-      <CallToAction />
     </div>
   );
 };
