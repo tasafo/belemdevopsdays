@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Button } from "@/components/ui/button";
-import sponsorsData from '@/data/sponsors.json';
+import sponsorsData from '@/data/sponsors';
 
 interface Sponsor {
   id: string;

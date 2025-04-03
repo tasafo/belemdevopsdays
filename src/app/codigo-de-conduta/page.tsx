@@ -7,10 +7,15 @@ export const metadata: Metadata = {
 };
 
 export default function CodeOfConductPage() {
-  return <div className="min-h-screen pt-24 pb-12">
-    <div className="container mx-auto px-4">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold text-primary mb-8 text-center">Código de Conduta</h1>
+  return (
+    <div className="min-h-screen pt-24 pb-12">
+      <div className="container mx-auto px-4 py-12">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">Código de Conduta</h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Conheça o código de conduta do evento DevOpsDays Belém 2025
+          </p>
+        </div>
 
         <div className="bg-white p-8">
           <div className="prose prose-lg max-w-none text-left">
@@ -102,5 +107,5 @@ export default function CodeOfConductPage() {
         </div>
       </div>
     </div>
-  </div>
+  );
 } 

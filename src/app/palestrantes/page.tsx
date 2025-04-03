@@ -1,7 +1,8 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import speakers from '@/data/speakers';
-import SpeakerCard from './SpeakerCard';
+import SpeakerCard from '@/components/SpeakerCard';
+import EmptyState from '@/components/EmptyState';
 
 export const metadata: Metadata = {
   title: 'Palestrantes | DevOpsDays Belém 2025',
@@ -9,6 +10,20 @@ export const metadata: Metadata = {
 };
 
 export default function SpeakersPage ()  {
+  const handleSubmitTalk = () => {
+    window.location.href = 'https://www.papercall.io/devopsdaysbelem2025';
+  };
+
+  
+  if (speakers.speakers.length === 0) {
+    return (
+      <EmptyState
+        title="Palestrantes"
+      />
+    );
+  }
+
+
   return (
     <div className="min-h-screen pt-24 pb-12">
       <div className="container mx-auto px-4 py-12">

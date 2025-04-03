@@ -29,10 +29,17 @@ const Sponsors = () => {
 
   return (
     <div className="min-h-screen pt-24 pb-12">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 py-12">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">Seja nosso parceiro</h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Conheça as empresas que estão apoiando o DevOpsDays Belém 2025 e saiba como se tornar um patrocinador.
+          </p>
+        </div>
+
+
         <div className="mx-auto mb-12">
           <div className="bg-white p-8">
-            <h2 className="text-4xl font-bold mb-6 text-primary">Seja nosso parceiro</h2>
             <p className="text-gray-700 mb-6 text-left">
               Profissionais de tecnologia irão participar do evento. Esta é uma ótima oportunidade para encontrar os melhores talentos, fazer demonstração dos seus produtos/serviços e tornar sua marca ainda mais conhecida. Também encorajamos nossos parceiros a sugerir temas para as <i>sessões interativas</i>, discussões abertas para tópicos relevantes. <b>Queremos que nossos parceiros se envolvam no evento!</b>
             </p>

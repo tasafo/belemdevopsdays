@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import { Twitter, Linkedin } from 'lucide-react';
-import teamData from '@/data/team_members.json';
+import teamData from '@/data/team_members';
 
 interface TeamMember {
   name: string;

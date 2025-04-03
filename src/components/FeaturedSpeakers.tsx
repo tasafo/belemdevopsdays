@@ -11,7 +11,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import speakersData from '@/data/speakers.json';
+import speakersData from '@/data/speakers';
 import Link from 'next/link';
 
 interface Speaker {

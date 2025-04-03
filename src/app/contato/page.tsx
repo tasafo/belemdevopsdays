@@ -9,10 +9,15 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  return (<div className="min-h-screen pt-24 pb-12">
-    <div className="container mx-auto px-4">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold text-primary mb-8 text-center">Contato</h1>
+  return (
+    <div className="min-h-screen pt-24 pb-12">
+      <div className="container mx-auto px-4 py-12">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">Contato</h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Entre em contato com a organização do DevOpsDays Belém 2025
+          </p>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="bg-white rounded-lg shadow-md p-8">
@@ -91,9 +96,9 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
-    </div>
 
-    <TeamMembers />
-  </div>
+
+      <TeamMembers />
+    </div>
   );
 } 

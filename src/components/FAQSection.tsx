@@ -5,7 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import eventData from '@/data/event.json';
+import eventData from '@/data/event';
 
 interface FAQ {
   question: string;

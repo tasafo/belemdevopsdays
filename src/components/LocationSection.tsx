@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { MapPin, Navigation, ExternalLink } from 'lucide-react';
-import locationData from '@/data/location.json';
+import locationData from '@/data/location';
 
 interface Location {
   venue: string;
