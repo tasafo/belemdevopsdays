@@ -1,5 +1,4 @@
-
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Twitter, Linkedin, Github } from 'lucide-react';
@@ -47,7 +46,7 @@ const Speakers = () => {
   return (
     <div className="min-h-screen pt-24 pb-12">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12 section-reveal">
+        <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">Palestrantes</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Conheça os especialistas que irão compartilhar seu conhecimento no DevOpsDays Belém 2025
@@ -69,7 +68,7 @@ const Speakers = () => {
             ))}
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 section-reveal">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {speakers.map((speaker) => (
               <div key={speaker.id} className="bg-white rounded-lg overflow-hidden shadow-md transition-transform hover:scale-105">
                 <div className="aspect-square bg-gray-200 relative">

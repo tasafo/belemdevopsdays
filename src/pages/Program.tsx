@@ -150,9 +150,6 @@ const Program = () => {
           </div>
         )}
       </div>
-      
-      <SponsorsSection />
-      <CallToAction />
     </div>
   );
 };
