@@ -1,0 +1,38 @@
+
+{
+  "team_members": [
+    {
+      "name": "Paulo Igor",
+      "employer": "Idopter Labs",
+      "image": "/placeholder.svg",
+      "twitter": "pigodinho",
+      "linkedin": "https://www.linkedin.com/in/pigodinho/"
+    },
+    {
+      "name": "Fábio Figueiredo",
+      "employer": "SysMap",
+      "image": "/placeholder.svg",
+      "twitter": "fabiolimaf",
+      "linkedin": "https://www.linkedin.com/in/fabiolimaf/"
+    },
+    {
+      "name": "Iago Cavalcante",
+      "employer": "Woovi",
+      "image": "/placeholder.svg",
+      "twitter": "iagoangelimc",
+      "linkedin": "https://www.linkedin.com/in/iago-a-cavalcante/"
+    },
+    {
+      "name": "Ricardo Casseb",
+      "employer": "Idopter Labs",
+      "image": "/placeholder.svg",
+      "linkedin": "https://www.linkedin.com/in/ricardocasseb/"
+    },
+    {
+      "name": "Ryan Ricardo de Souza",
+      "employer": "CR2 Transparência Pública",
+      "image": "/placeholder.svg",
+      "linkedin": "https://www.linkedin.com/in/theunrealryan/"
+    }
+  ]
+}

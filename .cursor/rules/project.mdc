@@ -1,0 +1,14 @@
+---
+description: 
+globs: *.tsx, *.ts
+alwaysApply: true
+---
+
+# Rules
+
+- Sempre user o "yarn"
+- Não modifquei o layout já existente a menos que eu peça por isso explicito 
+- Comentarios no código e nome de variaveis devem ser em English sempre
+- Texto que vão ser mostrado na aplicação devem ser em portugues brasileiro
+- Sempre opter por manter a estrutura original e variáveis existentes
+- Não use javascript para css efeitos

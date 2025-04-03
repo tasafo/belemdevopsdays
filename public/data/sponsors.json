@@ -1,0 +1,67 @@
+
+{
+  "sponsor_levels": [
+    {
+      "id": "diamante",
+      "label": "Diamante",
+      "amount": "R$ 5.000,00",
+      "sponsors": [
+        {
+          "id": "idopterlabs",
+          "name": "Idopter Labs",
+          "url": "https://idopterlabs.com.br",
+          "logo": "/lovable-uploads/ac658e29-076d-46c0-9e08-e62aba43a372.png"
+        }
+      ]
+    },
+    {
+      "id": "platinum",
+      "label": "Platina",
+      "amount": "R$ 3.000,00",
+      "sponsors": []
+    },
+    {
+      "id": "gold",
+      "label": "Ouro",
+      "amount": "R$ 2.000,00",
+      "sponsors": []
+    },
+    {
+      "id": "silver",
+      "label": "Prata",
+      "amount": "R$ 1.000,00",
+      "sponsors": []
+    },
+    {
+      "id": "bronze",
+      "label": "Bronze",
+      "amount": "R$ 700,00",
+      "sponsors": []
+    },
+    {
+      "id": "safo",
+      "label": "Safo",
+      "amount": "R$ 300,00",
+      "sponsors": []
+    },
+    {
+      "id": "community",
+      "label": "Comunidade",
+      "amount": "-",
+      "sponsors": [
+        {
+          "id": "tasafo",
+          "name": "Tá Safo",
+          "url": "https://tasafo.org",
+          "logo": "/lovable-uploads/ac658e29-076d-46c0-9e08-e62aba43a372.png"
+        },
+        {
+          "id": "devsnorte",
+          "name": "Devs Norte",
+          "url": "https://devsnorte.com",
+          "logo": "/lovable-uploads/ac658e29-076d-46c0-9e08-e62aba43a372.png"
+        }
+      ]
+    }
+  ]
+}
