@@ -133,7 +133,7 @@ const FeaturedSpeakers = () => {
         <div className="text-center mt-12">
           <Link to="/palestrantes">
             <Button className="bg-primary hover:bg-primary-dark text-white">
-              Ver Todos os Palestrantes
+              Ver todos os palestrantes
             </Button>
           </Link>
         </div>

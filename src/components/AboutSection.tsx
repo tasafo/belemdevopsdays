@@ -11,13 +11,13 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-gray-700 text-lg mb-6">
-              O <strong>DevOpsDays Belém</strong> é uma série de conferências técnicas voltadas para desenvolvedores, administradores de sistemas e profissionais afins envolvidos em operações de TI e desenvolvimento de software. O evento aborda tópicos relacionados à cultura DevOps, automação, testes, segurança e práticas organizacionais.
+              O <strong>DevOpsDays Belém</strong> é uma série de palestras voltadas para desenvolvedores, administradores de sistemas e profissionais afins envolvidos em operações de TI e desenvolvimento de software. O evento aborda tópicos relacionados à cultura DevOps, automação, testes, segurança e práticas organizacionais.
             </p>
             <p className="text-gray-700 text-lg mb-6">
               Nosso evento é organizado por voluntários apaixonados e faz parte do movimento global DevOpsDays, que reúne comunidades locais ao redor do mundo para compartilhar conhecimentos e experiências.
             </p>
             <p className="text-gray-700 text-lg">
-              Em 2025, teremos um dia repleto de palestras, lightning talks, fishbowls e networking para promover a troca de conhecimento e fortalecer a comunidade de tecnologia na região Norte do Brasil.
+              Em 2025, teremos um dia repleto de palestras e networking para promover a troca de conhecimento e fortalecer a comunidade de tecnologia na região Norte do Brasil.
             </p>
           </div>
           
@@ -28,8 +28,8 @@ const AboutSection = () => {
             </div>
             
             <div className="bg-gradient-to-br from-secondary to-secondary-light text-white rounded-lg p-6 transform transition-transform hover:scale-105">
-              <h3 className="text-xl font-bold mb-3">Open Spaces</h3>
-              <p>Discussões auto-organizadas onde os participantes criam a agenda.</p>
+              <h3 className="text-xl font-bold mb-3">Casos de Sucesso</h3>
+              <p>Histórias reais de empresas que implementaram DevOps com sucesso e os resultados obtidos.</p>
             </div>
             
             <div className="bg-gradient-to-br from-secondary to-secondary-light text-white rounded-lg p-6 transform transition-transform hover:scale-105">

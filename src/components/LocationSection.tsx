@@ -74,27 +74,7 @@ const LocationSection = () => {
                 <ExternalLink size={20} className="text-primary" />
               </a>
             </div>
-            
-            <div className="flex flex-wrap gap-2 mt-4">
-              <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" size="sm" className="flex items-center gap-1">
-                  <MapPin size={16} />
-                  Google Maps
-                </Button>
-              </a>
-              <a href={uberUrl} target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" size="sm" className="flex items-center gap-1">
-                  <Navigation size={16} />
-                  Uber
-                </Button>
-              </a>
-              <a href={moovitUrl} target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" size="sm" className="flex items-center gap-1">
-                  <Navigation size={16} />
-                  Moovit
-                </Button>
-              </a>
-            </div>
+          
           </div>
           
           <div className="flex flex-col justify-center">
@@ -114,6 +94,27 @@ const LocationSection = () => {
             )}
             
             <p className="text-gray-700">{location.description}</p>
+
+            <div className="flex flex-wrap gap-2 mt-4 justify-center">
+              <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" size="sm" className="flex items-center gap-1">
+                  <MapPin size={16} />
+                  Google Maps
+                </Button>
+              </a>
+              <a href={uberUrl} target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" size="sm" className="flex items-center gap-1">
+                  <Navigation size={16} />
+                  Uber
+                </Button>
+              </a>
+              <a href={moovitUrl} target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" size="sm" className="flex items-center gap-1">
+                  <Navigation size={16} />
+                  Moovit
+                </Button>
+              </a>
+            </div>
           </div>
         </div>
       </div>
