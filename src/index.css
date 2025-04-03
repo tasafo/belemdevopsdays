@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
-@import "App.css";
+@import './styles/main.css';
+@import './styles/animations.css';
 
 @tailwind base;
 @tailwind components;
@@ -69,21 +70,4 @@
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground font-sans scroll-smooth;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-bold;
-  }
-}
-
-html {
-  scroll-behavior: smooth;
-}
 

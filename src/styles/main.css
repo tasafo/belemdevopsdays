@@ -1,6 +1,27 @@
-@import './animations.css';
+@layer base {
+  * {
+    @apply border-border;
+  }
 
-/* Global styles */
+  body {
+    @apply bg-background text-foreground font-sans scroll-smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -20,7 +41,6 @@ body {
   line-height: 1.6;
 }
 
-/* Container styles */
 .container {
   width: 100%;
   max-width: 1200px;
@@ -28,7 +48,6 @@ body {
   padding: 0 1rem;
 }
 
-/* Primary and secondary colors */
 :root {
   --primary: #004a8f;
   --primary-dark: #003a6f;
@@ -38,7 +57,6 @@ body {
   --secondary-light: #3890e0;
 }
 
-/* Utility classes */
 .text-primary {
   color: var(--primary);
 }
@@ -55,20 +73,17 @@ body {
   background-color: var(--secondary);
 }
 
-/* Fix for Safari */
 @supports (-webkit-touch-callout: none) {
   section {
     transform: translateZ(0);
   }
 }
 
-/* Improve focus styles for accessibility */
 a:focus, button:focus {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
 
-/* Responsive image handling */
 img {
   max-width: 100%;
   height: auto;
