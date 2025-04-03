@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+'use client';
+
+import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from 'next/link';
@@ -16,8 +18,6 @@ const ScheduleHighlights = () => {
     return { ...talk, speaker };
   });
 
-  const [highlights] = useState<(Talk & { speaker?: Speaker })[]>(talksWithSpeakers);
-
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -29,7 +29,7 @@ const ScheduleHighlights = () => {
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {highlights.map((talk) => (
+          {talksWithSpeakers.map((talk) => (
             <Card key={talk.id} className="hover:shadow-lg transition-shadow">
               <CardContent className="p-6">
                 <div className="text-secondary-dark font-medium mb-2">

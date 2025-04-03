@@ -4,7 +4,7 @@ import CodeOfConduct from './CodeOfConduct';
 
 export const metadata: Metadata = {
   title: 'Código de Conduta | DevOpsDays Belém 2025',
-  description: 'Confira o código de conduta do DevOpsDays Belém 2025. Todos os participantes devem seguir estas diretrizes.',
+  description: 'Consulte o código de conduta do evento DevOpsDays Belém 2025.',
 };
 
 export default function CodeOfConductPage() {

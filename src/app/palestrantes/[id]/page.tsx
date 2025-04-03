@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import SpeakerDetail from '@/src/app/pages/SpeakerDetail';
+import SpeakerDetail from '../SpeakerDetail';
 import speakers from '@/data/speakers';
 
 type Props = {
@@ -14,11 +14,17 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const speaker = speakers.speakers.find((s) => s.id === params.id);
+  const speaker = speakers.speakers.find(s => s.id === params.id);
   
+  if (!speaker) {
+    return {
+      title: 'Palestrante não encontrado | DevOpsDays Belém 2025'
+    };
+  }
+
   return {
-    title: speaker ? `${speaker.name} | DevOpsDays Belém 2025` : 'Palestrante | DevOpsDays Belém 2025',
-    description: speaker?.bio || 'Conheça mais sobre nosso palestrante no DevOpsDays Belém 2025.',
+    title: `${speaker.name} | Palestrante | DevOpsDays Belém 2025`,
+    description: `Conheça mais sobre ${speaker.name}, palestrante do DevOpsDays Belém 2025.`
   };
 }
 

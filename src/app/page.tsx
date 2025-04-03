@@ -1,6 +1,12 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import Index from './pages/Index';
+import Hero from '@/components/Hero';
+import AboutSection from '@/components/AboutSection';
+import ScheduleHighlights from '@/components/ScheduleHighlights';
+import FeaturedSpeakers from '@/components/FeaturedSpeakers';
+import LocationSection from '@/components/LocationSection';
+import FAQSection from '@/components/FAQSection';
+import TeamMembers from '@/components/TeamMembers';
 
 export const metadata: Metadata = {
   title: 'DevOpsDays Belém 2025',
@@ -8,5 +14,15 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <Index />;
+  return (
+    <div className="min-h-screen">
+      <Hero />
+      <AboutSection />
+      <ScheduleHighlights />
+      <FeaturedSpeakers />
+      <LocationSection />
+      <FAQSection />
+      <TeamMembers />
+    </div>
+  );
 } 
