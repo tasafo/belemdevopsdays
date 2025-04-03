@@ -8,7 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Program from "./pages/Program";
 import Speakers from "./pages/Speakers";
-import SpeakerDetail from "./components/SpeakerDetail";
+import SpeakerDetail from "./pages/SpeakerDetail";
 import Sponsors from "./pages/Sponsors";
 import CodeOfConduct from "./pages/CodeOfConduct";
 import Contact from "./pages/Contact";
