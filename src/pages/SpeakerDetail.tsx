@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from 'lucide-react';
-import speakersData from '@/data/speakers.json';
-import talksData from '@/data/talks.json';
-import { Speaker, Talk } from '@/types/talks';
+import speakersData, { Speaker } from '@/data/speakers';
+import talksData, { Talk } from '@/data/talks';
 import EmptyState from '@/components/EmptyState';
+import { useParams } from 'next/navigation';
+import Link from 'next/link';
 
 const SpeakerDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -65,7 +65,7 @@ const SpeakerDetail = () => {
     <div className="min-h-screen pt-24 pb-12">
       <div className="container mx-auto px-4">
         <div className="mb-6">
-          <Link to="/palestrantes">
+          <Link href="/palestrantes">
             <Button variant="ghost" className="text-primary hover:bg-primary-light/10">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Voltar para Palestrantes

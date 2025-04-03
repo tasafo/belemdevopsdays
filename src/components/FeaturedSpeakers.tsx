@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Twitter, Linkedin, Github } from 'lucide-react';
@@ -11,6 +10,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import speakersData from '@/data/speakers.json';
+import Link from 'next/link';
 
 interface Speaker {
   id: string;
@@ -76,7 +76,7 @@ const FeaturedSpeakers = () => {
                         <p className="text-gray-700 line-clamp-3 mb-4">{speaker.bio}</p>
                         
                         <div className="flex items-center justify-between">
-                          <Link to={`/palestrantes/${speaker.id}`}>
+                          <Link href={`/palestrantes/${speaker.id}`}>
                             <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
                               Ver Perfil
                             </Button>
@@ -114,7 +114,7 @@ const FeaturedSpeakers = () => {
         </div>
         
         <div className="text-center mt-12">
-          <Link to="/palestrantes">
+          <Link href="/palestrantes">
             <Button className="bg-primary hover:bg-primary-dark text-white">
               Ver todos os palestrantes
             </Button>

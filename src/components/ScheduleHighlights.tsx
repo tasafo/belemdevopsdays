@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import talksData from '@/data/talks.json';
-import speakersData from '@/data/speakers.json';
-import { Talk, Speaker } from '@/types/talks';
+import Link from 'next/link';
+import speakersData, { Speaker } from '@/data/speakers';
+import talksData, { Talk } from '@/data/talks';
 
 const ScheduleHighlights = () => {
   const allTalks = talksData.talks.filter((talk) => talk.type === "talk");
@@ -49,7 +48,7 @@ const ScheduleHighlights = () => {
         </div>
         
         <div className="text-center mt-12">
-          <Link to="/programa">
+          <Link href="/programa">
             <Button className="bg-primary hover:bg-primary-dark text-white">
               Ver programação completa
             </Button>

@@ -1,9 +1,11 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 import { Calendar, Send } from 'lucide-react';
-import talksData from '@/data/talks.json';
 import speakersData from '@/data/speakers.json';
-import { Talk, Speaker } from '@/types/talks';
 import EmptyState from '@/components/EmptyState';
+import talksData, { Talk } from '@/data/talks';
+import { Speaker } from '@/data/speakers';
 
 const Program = () => {
   const [talks] = useState<Talk[]>(talksData.talks || []);

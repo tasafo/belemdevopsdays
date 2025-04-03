@@ -1,11 +1,5 @@
 
-import { useEffect } from 'react';
-
 const CodeOfConduct = () => {
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, []);
-
   return (
     <div className="min-h-screen pt-24 pb-12">
       <div className="container mx-auto px-4">

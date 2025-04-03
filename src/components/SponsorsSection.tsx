@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Button } from "@/components/ui/button";
 import sponsorsData from '@/data/sponsors.json';
 
@@ -59,7 +59,7 @@ const SponsorsSection = () => {
                   ))}
                 </div>
               ) : (
-                <Link to="/patrocinio" className="block p-8 text-gray-500 hover:text-primary transition-colors">
+                <Link href="/patrocinio" className="block p-8 text-gray-500 hover:text-primary transition-colors">
                   Seja o primeiro patrocinador desta categoria!
                 </Link>
               )}
@@ -68,9 +68,9 @@ const SponsorsSection = () => {
         </div>
         
         <div className="text-center mt-16">
-          <Link to="/patrocinio">
+          <Link href="/patrocinio">
             <Button className="bg-primary hover:bg-primary-dark text-white">
-              Torne-se um Patrocinador
+              Torne-se um patrocinador
             </Button>
           </Link>
         </div>
