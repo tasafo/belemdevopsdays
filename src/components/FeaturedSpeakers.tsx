@@ -3,7 +3,14 @@ import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, Twitter, Linkedin, Github } from 'lucide-react';
+import { Twitter, Linkedin, Github } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 interface Speaker {
   id: string;
@@ -20,7 +27,7 @@ interface Speaker {
 
 const FeaturedSpeakers = () => {
   const [speakers, setSpeakers] = useState<Speaker[]>([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [api, setApi] = useState<any>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
   const timerRef = useRef<number | null>(null);
 
@@ -66,48 +73,16 @@ const FeaturedSpeakers = () => {
     };
   }, []);
 
-  // Start automatic carousel
+  // Auto-advance carousel
   useEffect(() => {
-    if (speakers.length <= 3) return;
+    if (!api || speakers.length <= 3) return;
     
-    const startTimer = () => {
-      timerRef.current = window.setTimeout(() => {
-        setCurrentIndex((prevIndex) => 
-          prevIndex === Math.max(0, speakers.length - 3) ? 0 : prevIndex + 1
-        );
-      }, 3000);
-    };
+    const interval = setInterval(() => {
+      api.scrollNext();
+    }, 3000);
     
-    startTimer();
-    
-    return () => {
-      if (timerRef.current) {
-        clearTimeout(timerRef.current);
-      }
-    };
-  }, [currentIndex, speakers.length]);
-
-  const nextSlide = () => {
-    if (timerRef.current) {
-      clearTimeout(timerRef.current);
-    }
-    
-    setCurrentIndex((prevIndex) => 
-      prevIndex === Math.max(0, speakers.length - 3) ? 0 : prevIndex + 1
-    );
-  };
-
-  const prevSlide = () => {
-    if (timerRef.current) {
-      clearTimeout(timerRef.current);
-    }
-    
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? Math.max(0, speakers.length - 3) : prevIndex - 1
-    );
-  };
-
-  const visibleSpeakers = speakers.slice(currentIndex, currentIndex + 3);
+    return () => clearInterval(interval);
+  }, [api, speakers.length]);
 
   return (
     <section className="py-20 bg-gray-50" ref={sectionRef}>
@@ -121,71 +96,67 @@ const FeaturedSpeakers = () => {
           </p>
           
           <div className="relative">
-            {speakers.length > 3 && (
-              <>
-                <button 
-                  onClick={prevSlide} 
-                  className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 focus:outline-none"
-                  aria-label="Previous speakers"
-                >
-                  <ChevronLeft className="text-primary" />
-                </button>
-                <button 
-                  onClick={nextSlide} 
-                  className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 focus:outline-none"
-                  aria-label="Next speakers"
-                >
-                  <ChevronRight className="text-primary" />
-                </button>
-              </>
-            )}
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 overflow-hidden">
-              {visibleSpeakers.map((speaker) => (
-                <Card key={speaker.id} className="overflow-hidden hover:shadow-lg transition-shadow bg-white">
-                  <CardContent className="p-0">
-                    <div className="aspect-square bg-gray-200 relative">
-                      <img 
-                        src={speaker.photo} 
-                        alt={speaker.name} 
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <h3 className="font-bold text-xl mb-1">{speaker.name}</h3>
-                      <p className="text-gray-600 mb-3">{speaker.company}</p>
-                      <p className="text-gray-700 line-clamp-3 mb-4">{speaker.bio}</p>
-                      
-                      <div className="flex items-center justify-between">
-                        <Link to={`/palestrantes/${speaker.id}`}>
-                          <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
-                            Ver Perfil
-                          </Button>
-                        </Link>
-                        
-                        <div className="flex space-x-2">
-                          {speaker.social.twitter && (
-                            <a href={`https://twitter.com/${speaker.social.twitter}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-600">
-                              <Twitter size={20} />
-                            </a>
-                          )}
-                          {speaker.social.linkedin && (
-                            <a href={speaker.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-900">
-                              <Linkedin size={20} />
-                            </a>
-                          )}
-                          {speaker.social.github && (
-                            <a href={speaker.social.github} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-gray-900">
-                              <Github size={20} />
-                            </a>
-                          )}
+            <Carousel 
+              setApi={setApi}
+              className="w-full max-w-5xl mx-auto"
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+            >
+              <CarouselContent>
+                {speakers.map((speaker) => (
+                  <CarouselItem key={speaker.id} className="md:basis-1/3 pl-4">
+                    <Card className="overflow-hidden hover:shadow-lg transition-shadow bg-white h-full">
+                      <CardContent className="p-0">
+                        <div className="aspect-square bg-gray-200 relative">
+                          <img 
+                            src={speaker.photo} 
+                            alt={speaker.name} 
+                            className="w-full h-full object-cover"
+                          />
                         </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+                        <div className="p-6">
+                          <h3 className="font-bold text-xl mb-1">{speaker.name}</h3>
+                          <p className="text-gray-600 mb-3">{speaker.company}</p>
+                          <p className="text-gray-700 line-clamp-3 mb-4">{speaker.bio}</p>
+                          
+                          <div className="flex items-center justify-between">
+                            <Link to={`/palestrantes/${speaker.id}`}>
+                              <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
+                                Ver Perfil
+                              </Button>
+                            </Link>
+                            
+                            <div className="flex space-x-2">
+                              {speaker.social.twitter && (
+                                <a href={`https://twitter.com/${speaker.social.twitter}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-600">
+                                  <Twitter size={20} />
+                                </a>
+                              )}
+                              {speaker.social.linkedin && (
+                                <a href={speaker.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-900">
+                                  <Linkedin size={20} />
+                                </a>
+                              )}
+                              {speaker.social.github && (
+                                <a href={speaker.social.github} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-gray-900">
+                                  <Github size={20} />
+                                </a>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <div className="flex justify-center mt-4">
+                <CarouselPrevious className="relative static left-0 right-auto translate-y-0 mr-2" />
+                <CarouselNext className="relative static left-auto right-0 translate-y-0" />
+              </div>
+            </Carousel>
           </div>
           
           <div className="text-center mt-12">

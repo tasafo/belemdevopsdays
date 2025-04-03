@@ -1,13 +1,13 @@
 
 {
-  "venue": "A ser definido",
-  "address": "",
+  "venue": "Shopping Pátio Belém",
+  "address": "Travessa Padre Eutíquio, 1078 - Batista Campos",
   "city": "Belém",
   "state": "PA",
   "country": "Brasil",
   "coordinates": {
-    "lat": -1.4558,
-    "lng": -48.5044
+    "lat": -1.4516813,
+    "lng": -48.4809826
   },
-  "description": "O local do evento será anunciado em breve. Fique atento às nossas redes sociais para mais informações."
+  "description": "O evento será realizado no Shopping Pátio Belém, localizado no coração da cidade, com fácil acesso por transporte público e amplo estacionamento."
 }

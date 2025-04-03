@@ -15,6 +15,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollReveal from "./components/ScrollReveal";
 
 // Create a client
 const queryClient = new QueryClient();
@@ -38,6 +39,7 @@ const App: React.FC = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
+          <ScrollReveal />
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>

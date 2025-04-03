@@ -100,6 +100,7 @@ const SponsorsSection = () => {
                           src={sponsor.logo} 
                           alt={sponsor.name} 
                           className="max-h-24 max-w-full mx-auto"
+                          loading="lazy"
                         />
                         <p className="mt-2 text-gray-700">{sponsor.name}</p>
                       </a>
@@ -131,6 +132,7 @@ const SponsorsSection = () => {
                       src={sponsor.logo} 
                       alt={sponsor.name} 
                       className="max-h-20 max-w-full mx-auto"
+                      loading="lazy"
                     />
                     <p className="mt-2 text-center text-gray-700">{sponsor.name}</p>
                   </a>

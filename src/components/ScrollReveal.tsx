@@ -3,17 +3,15 @@ import React, { useEffect } from 'react';
 
 const ScrollReveal: React.FC = () => {
   useEffect(() => {
-    // Apply smooth scrolling to the whole page
+    // Apply smooth scrolling to the whole page with reduced delay
     document.documentElement.style.scrollBehavior = 'smooth';
     
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          // Add a slight delay to prevent flickering
           if (entry.isIntersecting) {
-            setTimeout(() => {
-              entry.target.classList.add('revealed');
-            }, 50);
+            // Make reveal immediate to prevent flickering
+            entry.target.classList.add('revealed');
           }
         });
       },
@@ -33,14 +31,15 @@ const ScrollReveal: React.FC = () => {
     };
   }, []);
 
-  // Add global styles to prevent page flashing on load
+  // Add global styles with improved transitions
   useEffect(() => {
     const style = document.createElement('style');
     style.innerHTML = `
       .section-reveal {
         opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        transform: translateY(10px);
+        transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+        will-change: opacity, transform;
       }
       
       .revealed {
@@ -48,14 +47,26 @@ const ScrollReveal: React.FC = () => {
         transform: translateY(0);
       }
       
-      /* Preload animation to prevent flashing */
+      /* Improve page load animation */
       body {
-        animation: fade-in 0.3s ease-out;
+        animation: none;
+        opacity: 1;
       }
       
-      @keyframes fade-in {
-        from { opacity: 0; }
-        to { opacity: 1; }
+      /* Hero section specific animations */
+      .animate-fade-in-up {
+        animation: fadeInUp 0.6s ease-out forwards;
+      }
+      
+      @keyframes fadeInUp {
+        from { 
+          opacity: 0; 
+          transform: translateY(20px);
+        }
+        to { 
+          opacity: 1; 
+          transform: translateY(0);
+        }
       }
     `;
     document.head.appendChild(style);
