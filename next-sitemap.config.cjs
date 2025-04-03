@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://tiagodanin.com',
+  siteUrl: 'https://tasafo.github.io/belemdevopsdays',
   generateRobotsTxt: true,
   additionalSitemaps: [],
   generateIndexSitemap: false,

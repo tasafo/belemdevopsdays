@@ -18,9 +18,13 @@ export default function Home() {
     <div className="min-h-screen">
       <Hero />
       <AboutSection />
-      <ScheduleHighlights />
-      <FeaturedSpeakers />
-      <LocationSection />
+      {process.env.NODE_ENV === "development" && (
+        <>
+          <ScheduleHighlights />
+          <FeaturedSpeakers />
+          <LocationSection />
+        </>
+      )}
       <FAQSection />
       <TeamMembers />
     </div>

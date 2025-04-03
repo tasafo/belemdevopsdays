@@ -10,6 +10,10 @@ type Props = {
 };
 
 export async function generateStaticParams() {
+  if (!speakers.speakers || speakers.speakers.length === 0) {
+    return [{ id: 'placeholder' }];
+  }
+  
   return speakers.speakers.map((speaker) => ({
     id: speaker.id,
   }));

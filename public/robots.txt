@@ -1,14 +1,9 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
+# *
 User-agent: *
 Allow: /
+
+# Host
+Host: https://tasafo.github.io/belemdevopsdays
+
+# Sitemaps
+Sitemap: https://tasafo.github.io/belemdevopsdays/sitemap.xml
