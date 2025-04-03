@@ -42,7 +42,7 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-6">
-            <Link href="/programa" className="text-gray-800 hover:text-primary transition-colors">
+            <Link href="/programacao" className="text-gray-800 hover:text-primary transition-colors">
               Programação
             </Link>
             <Link href="/palestrantes" className="text-gray-800 hover:text-primary transition-colors">
@@ -87,7 +87,7 @@ const Navbar = () => {
                 Home
               </Link>
               <Link
-                href="/programa"
+                href="/programacao"
                 className="text-gray-800 hover:text-primary transition-colors py-2"
                 onClick={() => setIsOpen(false)}
               >

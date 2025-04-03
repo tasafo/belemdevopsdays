@@ -15,7 +15,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'DevOpsDays Belém 2025',
-  description: 'DevOpsDays é uma série de conferências técnicas que abrangem tópicos de desenvolvimento de software, operações de infraestrutura de TI e a interseção entre eles.',
+  description: 'O maior evento de DevOps da região Norte. Palestras, networking e muito conhecimento.',
 };
 
 export default function RootLayout({
@@ -25,14 +25,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-      </head>
       <body className={inter.className}>
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <NextTopLoader color="#7C3AED" showSpinner={false} />
+          <NextTopLoader color="#004a8f" showSpinner={false} />
           <div className="flex flex-col min-h-screen">
             <Navbar />
             <main className="flex-1">

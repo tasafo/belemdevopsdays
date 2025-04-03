@@ -48,7 +48,7 @@ const ScheduleHighlights = () => {
         </div>
         
         <div className="text-center mt-12">
-          <Link href="/programa">
+          <Link href="/programacao">
             <Button className="bg-primary hover:bg-primary-dark text-white">
               Ver programação completa
             </Button>
