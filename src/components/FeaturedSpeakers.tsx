@@ -107,8 +107,8 @@ const FeaturedSpeakers = () => {
               ))}
             </CarouselContent>
             <div className="flex justify-center mt-4">
-              <CarouselPrevious className="relative static left-0 right-auto translate-y-0 mr-2" />
-              <CarouselNext className="relative static left-auto right-0 translate-y-0" />
+              <CarouselPrevious className="relative left-0 right-auto translate-y-0 mr-2" />
+              <CarouselNext className="relative left-auto right-0 translate-y-0" />
             </div>
           </Carousel>
         </div>
