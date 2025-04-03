@@ -20,6 +20,10 @@ const Hero = () => {
             DevOpsDays Belém 2025
           </h1>
           
+          <p className="text-xl md:text-2xl text-gray-700 mb-6 max-w-3xl animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+            O maior evento de DevOps da região Norte
+          </p>
+          
           <p className="text-xl md:text-2xl text-gray-700 mb-6 max-w-3xl animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
             7 de Junho de 2025 • Belém, Pará • 09:00 - 18:00
           </p>
@@ -27,7 +31,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
             <Button asChild size="lg" className="bg-primary hover:bg-primary-dark text-white px-8 py-6 text-lg">
               <a href="https://www.sympla.com.br/evento/devopsdays-belem-2025/2818140" target="_blank" rel="noopener noreferrer">
-                Inscreva-se Agora
+                Inscreva-se agora
               </a>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary-light hover:text-white px-8 py-6 text-lg">

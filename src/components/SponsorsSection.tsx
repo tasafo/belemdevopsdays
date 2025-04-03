@@ -80,14 +80,14 @@ const SponsorsSection = () => {
             Conheça as empresas que estão apoiando o DevOpsDays Belém 2025
           </p>
           
-          {/* Featured Sponsor Levels */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          {/* Sponsors displayed vertically */}
+          <div className="space-y-16">
             {mainLevels.map((level) => (
               <div key={level.id} className="text-center">
-                <h3 className="text-xl font-bold mb-4 text-primary-dark">{level.label}</h3>
+                <h3 className="text-xl font-bold mb-6 text-primary-dark">{level.label}</h3>
                 
                 {level.sponsors.length > 0 ? (
-                  <div className="flex flex-wrap justify-center gap-6">
+                  <div className="flex flex-wrap justify-center gap-10">
                     {level.sponsors.map((sponsor) => (
                       <a 
                         key={sponsor.id}
@@ -116,9 +116,9 @@ const SponsorsSection = () => {
           
           {/* Community Sponsors */}
           {communityLevel && communityLevel.sponsors.length > 0 && (
-            <div className="mt-12">
+            <div className="mt-16">
               <h3 className="text-xl font-bold mb-6 text-center">Comunidades Apoiadoras</h3>
-              <div className="flex flex-wrap justify-center gap-8">
+              <div className="flex flex-wrap justify-center gap-10">
                 {communityLevel.sponsors.map((sponsor) => (
                   <a 
                     key={sponsor.id}
@@ -139,7 +139,7 @@ const SponsorsSection = () => {
             </div>
           )}
           
-          <div className="text-center mt-12">
+          <div className="text-center mt-16">
             <Link to="/patrocinio">
               <Button className="bg-primary hover:bg-primary-dark text-white">
                 Torne-se um Patrocinador

@@ -1,9 +1,11 @@
 
 import { useEffect } from 'react';
+import SponsorsSection from '@/components/SponsorsSection';
+import CallToAction from '@/components/CallToAction';
 
 const CodeOfConduct = () => {
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
   return (
@@ -14,42 +16,83 @@ const CodeOfConduct = () => {
           
           <div className="bg-white rounded-lg shadow-md p-8">
             <div className="prose prose-lg max-w-none">
-              <h2>Objetivo</h2>
+              <h2>CÓDIGO DE CONDUTA - DEVOPSDAYS BELÉM 2025</h2>
+              
+              <h3>NOSSO COMPROMISSO E ESCOPO</h3>
               <p>
-                O DevOpsDays Belém está comprometido em proporcionar uma experiência livre de assédio para todos os participantes, independentemente de gênero, orientação sexual, deficiência, aparência física, tamanho corporal, raça ou religião. Não toleramos o assédio dos participantes do evento sob qualquer forma. Linguagem e imagens sexuais não são apropriadas em nenhum local do evento, incluindo palestras, workshops, festas, Twitter e outras mídias online.
+                Nosso objetivo é garantir que o DevOpsDays Belém seja um espaço seguro e inclusivo para todos. 
+                Buscamos promover um ambiente de respeito mútuo, colaboração e crescimento profissional. 
+                Nosso evento é para todos se sentirem seguros e respeitados. Este Código se aplica a todos os 
+                envolvidos no evento, incluindo organizadores, palestrantes, patrocinadores e voluntários, 
+                em todas as atividades e espaços relacionados.
               </p>
               
+              <h3>RESPEITO E INCLUSÃO</h3>
               <p>
-                Os participantes que violarem estas regras podem ser punidos ou expulsos do evento sem restituição a critério dos organizadores do evento.
+                É esperado que todos tratem uns aos outros com respeito, dignidade e cortesia. 
+                Estamos comprometidos com um ambiente livre de discriminação, independente de gênero, 
+                orientação sexual, raça, etnia, idade, religião, habilidade ou status socioeconômico.
               </p>
               
-              <h2>Versão detalhada</h2>
+              <h3>COMPORTAMENTOS ESPERADOS</h3>
               <p>
-                O assédio inclui comentários verbais ofensivos relacionados a gênero, orientação sexual, deficiência, aparência física, tamanho corporal, raça, religião, imagens sexuais em espaços públicos, intimidação deliberada, perseguição, assédio fotográfico ou gravação, interrupção contínua de palestras ou outros eventos, contato físico inadequado e atenção sexual indesejada.
+                Encorajamos a participação ativa e respeitosa, promovendo a saúde e a longevidade da 
+                nossa comunidade. Não toleramos comportamentos discriminatórios, humilhantes ou abusivos. 
+                O que esperamos:
+              </p>
+              <ul>
+                <li>Usar linguagem acolhedora e inclusiva</li>
+                <li>Respeitar pontos de vista e experiências diferentes</li>
+                <li>Aceitar crítica construtiva de forma respeitosa</li>
+                <li>Focar no que é melhor para a comunidade</li>
+                <li>Mostrar empatia para com outros membros da comunidade</li>
+              </ul>
+              
+              <h3>COMPORTAMENTOS INACEITÁVEIS</h3>
+              <p>
+                Não serão tolerados assédio, intimidação, linguagem desrespeitosa e qualquer forma de 
+                discriminação ou humilhação. Isso inclui comentários ofensivos, perturbação de eventos, 
+                contato físico inapropriado ou atenção sexual indesejada. O assédio inclui: comentários 
+                verbais, escritos ou visuais (incluindo slides de apresentação) prejudiciais ou preconceituosos, 
+                relacionados a gênero, orientação sexual, raça, religião, aparência física, deficiência; 
+                uso inapropriado de nudez e/ou imagens sexuais; representações inapropriadas de violência; 
+                intimidação deliberada, perseguir ou importunar; fotografar ou gravar de modo abusivo; 
+                perturbação repetida de conversas ou outros eventos; contato físico ou visual inapropriado, 
+                ou abordagem sexual.
+              </p>
+              <p>Exemplos de comportamentos inaceitáveis:</p>
+              <ul>
+                <li>Comentários depreciativos ou prejudiciais, ataques pessoais ou políticos, bullying, xingamentos ou qualquer forma de desrespeito</li>
+                <li>Assédio público ou privado</li>
+                <li>Publicar informações privadas de terceiros, como endereço físico ou eletrônico, sem permissão explícita</li>
+                <li>Outras condutas que poderiam ser razoavelmente consideradas inadequadas em um ambiente profissional</li>
+              </ul>
+              
+              <h3>CONSEQUÊNCIAS</h3>
+              <p>
+                Comportamentos inaceitáveis levarão a ações corretivas, que podem incluir advertência ou 
+                expulsão do evento.
               </p>
               
+              <h3>DENÚNCIA</h3>
               <p>
-                Espera-se que os participantes solicitados a parar qualquer comportamento de assédio cumpram imediatamente.
+                Se testemunhar ou sofrer algum comportamento inaceitável, por favor, reporte imediatamente 
+                a um membro da equipe do evento. Estamos aqui para ajudar e garantir sua segurança e conforto.
               </p>
               
+              <h3>RESPONSABILIDADES</h3>
               <p>
-                Os patrocinadores também estão sujeitos à política anti-assédio. Em particular, os patrocinadores não devem usar imagens, atividades ou outro material sexualizado. A equipe de estande (incluindo voluntários) não deve usar roupas/uniformes/fantasias sexualizadas, ou de outra forma criar um ambiente sexualizado.
+                Todos os participantes são responsáveis por seguir este Código de Conduta, assegurando um 
+                ambiente positivo e enriquecedor no evento.
+                O credenciamento e checkin é individual, único e deve ser feito somente por você própria. 
+                É proibido fazer para outra pessoa, a você deve ser responsável somente pela sua propría 
+                identificação e credenciamento.
               </p>
               
+              <h3>APOIO E ASSISTÊNCIA</h3>
               <p>
-                Se um participante se envolver em comportamento de assédio, os organizadores do evento podem tomar qualquer ação que considerem apropriada, incluindo advertir o infrator ou expulsão do evento sem reembolso.
-              </p>
-              
-              <p>
-                Se você estiver sendo assediado, notar que alguém está sendo assediado, ou tiver qualquer outra preocupação, entre em contato com um membro da equipe do evento imediatamente. A equipe do evento pode ser identificada por camisetas específicas.
-              </p>
-              
-              <p>
-                A equipe do evento estará feliz em ajudar os participantes a entrar em contato com a segurança do local ou a polícia local, fornecer escoltas ou ajudar aqueles que sofrem assédio a se sentirem seguros durante o evento. Valorizamos a sua participação.
-              </p>
-              
-              <p>
-                Esperamos que os participantes sigam estas regras em todos os locais do evento, festas relacionadas ao evento e mídias sociais.
+                A equipe está disponível para oferecer apoio e assistência durante o evento. 
+                Contamos com sua colaboração para manter o DevOpsDays Belém um evento acolhedor para todos.
               </p>
 
               <div className="bg-blue-50 border-l-4 border-blue-400 p-4 my-6">
@@ -57,14 +100,13 @@ const CodeOfConduct = () => {
                   <strong>Contato:</strong> Se você tiver alguma dúvida ou preocupação sobre o código de conduta, entre em contato com os organizadores do evento em <a href="mailto:belem@devopsdays.org" className="text-blue-600 hover:underline">belem@devopsdays.org</a>.
                 </p>
               </div>
-              
-              <p className="text-sm mt-8">
-                <em>Este Código de Conduta é baseado no <a href="https://confcodeofconduct.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Código de Conduta para Conferências</a>.</em>
-              </p>
             </div>
           </div>
         </div>
       </div>
+      
+      <SponsorsSection />
+      <CallToAction />
     </div>
   );
 };

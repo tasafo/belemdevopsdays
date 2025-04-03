@@ -41,7 +41,7 @@ const ScheduleHighlights = () => {
         );
         
         // Randomly select 3 talks
-        const shuffled = [...allTalks].sort(() => 0.5 - Math.random());
+        const shuffled = [...allTalks].sort(() => Math.random() - 0.5);
         const selected = shuffled.slice(0, 3);
         
         // Map speakers to talks

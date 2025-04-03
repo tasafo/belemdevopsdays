@@ -48,7 +48,7 @@ const CallToAction = () => {
             
             <Button asChild size="lg" className="bg-white text-primary hover:bg-gray-100 px-8 py-6 text-lg">
               <a href="https://www.sympla.com.br/evento/devopsdays-belem-2025/2818140" target="_blank" rel="noopener noreferrer">
-                Inscreva-se Agora
+                Inscreva-se agora
               </a>
             </Button>
           </div>

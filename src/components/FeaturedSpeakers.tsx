@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Twitter, Linkedin, Github } from 'lucide-react';
 
 interface Speaker {
   id: string;
@@ -22,13 +22,16 @@ const FeaturedSpeakers = () => {
   const [speakers, setSpeakers] = useState<Speaker[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const timerRef = useRef<number | null>(null);
 
   useEffect(() => {
     const fetchSpeakers = async () => {
       try {
         const response = await fetch('/data/speakers.json');
         const data = await response.json();
-        setSpeakers(data.speakers || []);
+        // Randomize the order of speakers
+        const shuffledSpeakers = [...data.speakers || []].sort(() => Math.random() - 0.5);
+        setSpeakers(shuffledSpeakers);
       } catch (error) {
         console.error('Error fetching speakers:', error);
         setSpeakers([]);
@@ -63,13 +66,42 @@ const FeaturedSpeakers = () => {
     };
   }, []);
 
+  // Start automatic carousel
+  useEffect(() => {
+    if (speakers.length <= 3) return;
+    
+    const startTimer = () => {
+      timerRef.current = window.setTimeout(() => {
+        setCurrentIndex((prevIndex) => 
+          prevIndex === Math.max(0, speakers.length - 3) ? 0 : prevIndex + 1
+        );
+      }, 3000);
+    };
+    
+    startTimer();
+    
+    return () => {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+    };
+  }, [currentIndex, speakers.length]);
+
   const nextSlide = () => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
+    
     setCurrentIndex((prevIndex) => 
       prevIndex === Math.max(0, speakers.length - 3) ? 0 : prevIndex + 1
     );
   };
 
   const prevSlide = () => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
+    
     setCurrentIndex((prevIndex) => 
       prevIndex === 0 ? Math.max(0, speakers.length - 3) : prevIndex - 1
     );
@@ -123,11 +155,32 @@ const FeaturedSpeakers = () => {
                       <h3 className="font-bold text-xl mb-1">{speaker.name}</h3>
                       <p className="text-gray-600 mb-3">{speaker.company}</p>
                       <p className="text-gray-700 line-clamp-3 mb-4">{speaker.bio}</p>
-                      <Link to={`/palestrantes/${speaker.id}`}>
-                        <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-white">
-                          Ver Perfil
-                        </Button>
-                      </Link>
+                      
+                      <div className="flex items-center justify-between">
+                        <Link to={`/palestrantes/${speaker.id}`}>
+                          <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
+                            Ver Perfil
+                          </Button>
+                        </Link>
+                        
+                        <div className="flex space-x-2">
+                          {speaker.social.twitter && (
+                            <a href={`https://twitter.com/${speaker.social.twitter}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-600">
+                              <Twitter size={20} />
+                            </a>
+                          )}
+                          {speaker.social.linkedin && (
+                            <a href={speaker.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-900">
+                              <Linkedin size={20} />
+                            </a>
+                          )}
+                          {speaker.social.github && (
+                            <a href={speaker.social.github} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-gray-900">
+                              <Github size={20} />
+                            </a>
+                          )}
+                        </div>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>

@@ -2,6 +2,9 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
+import { Twitter, Linkedin, Github } from 'lucide-react';
+import SponsorsSection from '@/components/SponsorsSection';
+import CallToAction from '@/components/CallToAction';
 
 interface Speaker {
   id: string;
@@ -21,7 +24,7 @@ const Speakers = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     
     const fetchSpeakers = async () => {
       try {
@@ -79,17 +82,41 @@ const Speakers = () => {
                   <h2 className="font-bold text-xl mb-1">{speaker.name}</h2>
                   <p className="text-gray-600 mb-3">{speaker.company}</p>
                   <p className="text-gray-700 line-clamp-3 mb-4">{speaker.bio}</p>
-                  <Link to={`/palestrantes/${speaker.id}`}>
-                    <Button className="w-full bg-primary hover:bg-primary-dark text-white">
-                      Ver Perfil
-                    </Button>
-                  </Link>
+                  
+                  <div className="flex items-center justify-between">
+                    <Link to={`/palestrantes/${speaker.id}`}>
+                      <Button className="bg-primary hover:bg-primary-dark text-white">
+                        Ver Perfil
+                      </Button>
+                    </Link>
+                    
+                    <div className="flex space-x-3">
+                      {speaker.social.twitter && (
+                        <a href={`https://twitter.com/${speaker.social.twitter}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-600">
+                          <Twitter size={20} />
+                        </a>
+                      )}
+                      {speaker.social.linkedin && (
+                        <a href={speaker.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-900">
+                          <Linkedin size={20} />
+                        </a>
+                      )}
+                      {speaker.social.github && (
+                        <a href={speaker.social.github} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-gray-900">
+                          <Github size={20} />
+                        </a>
+                      )}
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         )}
       </div>
+      
+      <SponsorsSection />
+      <CallToAction />
     </div>
   );
 };

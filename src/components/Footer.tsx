@@ -1,9 +1,8 @@
 
 import { Link } from 'react-router-dom';
+import { Twitter, Mail, Github } from 'lucide-react';
 
 const Footer = () => {
-  const year = new Date().getFullYear();
-  
   return (
     <footer className="bg-primary text-white py-12">
       <div className="container mx-auto px-4">
@@ -20,14 +19,16 @@ const Footer = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:text-secondary-light transition-colors"
+                aria-label="Twitter"
               >
-                Twitter
+                <Twitter size={20} />
               </a>
               <a 
                 href="mailto:belem@devopsdays.org" 
                 className="hover:text-secondary-light transition-colors"
+                aria-label="Email"
               >
-                Email
+                <Mail size={20} />
               </a>
             </div>
           </div>
@@ -80,10 +81,6 @@ const Footer = () => {
               belem@devopsdays.org
             </a>
           </div>
-        </div>
-
-        <div className="border-t border-primary-light mt-8 pt-8 text-center">
-          <p>&copy; {year} DevOpsDays Belém. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

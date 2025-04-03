@@ -1,6 +1,9 @@
+
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import SponsorsSection from '@/components/SponsorsSection';
+import CallToAction from '@/components/CallToAction';
 
 interface Sponsor {
   id: string;
@@ -54,7 +57,7 @@ const Sponsors = () => {
           <div className="bg-white rounded-lg shadow-md p-8">
             <h2 className="text-2xl font-bold mb-6 text-primary">Seja nosso parceiro</h2>
             <p className="text-gray-700 mb-6">
-              Profissionais de tecnologia irão participar do evento. Esta é uma ótima oportunidade para encontrar os melhores talentos, fazer demonstração dos seus produtos/serviços e tornar sua marca ainda mais conhecida. Também encorajamos nossos parceiros a sugerir temas para os <i>open spaces</i>, sessões auto organizadas abertas para discussões relevantes. <b>Queremos que nossos parceiros se envolvam no evento!</b>
+              Profissionais de tecnologia irão participar do evento. Esta é uma ótima oportunidade para encontrar os melhores talentos, fazer demonstração dos seus produtos/serviços e tornar sua marca ainda mais conhecida. Também encorajamos nossos parceiros a sugerir temas para as <i>sessões interativas</i>, discussões abertas para tópicos relevantes. <b>Queremos que nossos parceiros se envolvam no evento!</b>
             </p>
             
             <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-8">
@@ -65,7 +68,7 @@ const Sponsors = () => {
             
             <h2 className="text-2xl font-bold mb-6 text-primary">Níveis de Patrocínio</h2>
             
-            <div className="overflow-x-auto">
+            <div className="overflow-auto">
               <table className="w-full border-collapse">
                 <thead>
                   <tr className="bg-gray-100">
@@ -80,16 +83,6 @@ const Sponsors = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td className="border px-4 py-3 font-medium">Contribuição</td>
-                    <td className="border px-4 py-3 text-center">R$300,00</td>
-                    <td className="border px-4 py-3 text-center">R$700,00</td>
-                    <td className="border px-4 py-3 text-center">R$1.000,00</td>
-                    <td className="border px-4 py-3 text-center">R$2.000,00</td>
-                    <td className="border px-4 py-3 text-center">R$3.000,00</td>
-                    <td className="border px-4 py-3 text-center">R$5.000,00</td>
-                    <td className="border px-4 py-3 text-center">-</td>
-                  </tr>
                   <tr>
                     <td className="border px-4 py-3 font-medium">Status</td>
                     <td className="border px-4 py-3 text-center">
@@ -214,7 +207,7 @@ const Sponsors = () => {
               {sponsorLevels.map((level) => (
                 <div key={level.id}>
                   <h3 className="text-2xl font-bold mb-6 text-center">
-                    {level.label} ({level.amount})
+                    {level.label}
                   </h3>
                   
                   {level.sponsors.length > 0 ? (
@@ -260,6 +253,9 @@ const Sponsors = () => {
           </>
         )}
       </div>
+      
+      <SponsorsSection />
+      <CallToAction />
     </div>
   );
 };

@@ -1,7 +1,8 @@
 
 import { useState, useEffect } from 'react';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Calendar } from 'lucide-react';
+import SponsorsSection from '@/components/SponsorsSection';
+import CallToAction from '@/components/CallToAction';
 
 interface Talk {
   id: string;
@@ -30,7 +31,7 @@ const Program = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     
     const fetchData = async () => {
       try {
@@ -97,19 +98,15 @@ const Program = () => {
             </div>
           </div>
         ) : (
-          <Tabs defaultValue={days[0]?.date} className="max-w-4xl mx-auto">
-            <TabsList className="mb-8 flex justify-center">
-              {days.map((day) => (
-                <TabsTrigger key={day.date} value={day.date} className="text-lg px-6">
-                  <Calendar className="w-4 h-4 mr-2" />
-                  {formatDate(day.date)}
-                </TabsTrigger>
-              ))}
-            </TabsList>
-            
-            {days.map((day) => (
-              <TabsContent key={day.date} value={day.date} className="space-y-6">
-                {day.talks.map((talk) => {
+          <div className="max-w-4xl mx-auto">
+            {days.length > 0 && (
+              <div className="space-y-6">
+                <div className="flex items-center justify-center mb-8 text-primary">
+                  <Calendar className="w-6 h-6 mr-2" />
+                  <h2 className="text-2xl font-bold">{formatDate(days[0].date)}</h2>
+                </div>
+                
+                {days[0].talks.map((talk) => {
                   const isTalk = talk.type === 'talk';
                   const isBreak = talk.type === 'break';
                   
@@ -148,11 +145,14 @@ const Program = () => {
                     </div>
                   );
                 })}
-              </TabsContent>
-            ))}
-          </Tabs>
+              </div>
+            )}
+          </div>
         )}
       </div>
+      
+      <SponsorsSection />
+      <CallToAction />
     </div>
   );
 };
