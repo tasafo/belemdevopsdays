@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Button } from "@/components/ui/button";
 import { MapPin, Navigation, ExternalLink } from 'lucide-react';
+import locationData from '@/data/location.json';
 
 interface Location {
   venue: string;
@@ -16,22 +17,7 @@ interface Location {
 }
 
 const LocationSection = () => {
-  const [location, setLocation] = useState<Location | null>(null);
-
-  useEffect(() => {
-    const fetchLocation = async () => {
-      try {
-        const response = await fetch('/data/location.json');
-        const data = await response.json();
-        setLocation(data);
-      } catch (error) {
-        console.error('Error fetching location:', error);
-        setLocation(null);
-      }
-    };
-
-    fetchLocation();
-  }, []);
+  const location = locationData as Location;
 
   if (!location) return null;
 

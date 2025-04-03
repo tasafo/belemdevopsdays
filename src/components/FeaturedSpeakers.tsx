@@ -10,6 +10,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import speakersData from '@/data/speakers.json';
 
 interface Speaker {
   id: string;
@@ -25,36 +26,18 @@ interface Speaker {
 }
 
 const FeaturedSpeakers = () => {
-  const [speakers, setSpeakers] = useState<Speaker[]>([]);
-  const [api, setApi] = useState<any>(null);
+  const speakers = [...speakersData.speakers || []].sort(() => Math.random() - 0.5);
+  const [apiCarousel, setApiCarousel] = useState<any>(null);
 
   useEffect(() => {
-    const fetchSpeakers = async () => {
-      try {
-        const response = await fetch('/data/speakers.json');
-        const data = await response.json();
-        // Randomize the order of speakers
-        const shuffledSpeakers = [...data.speakers || []].sort(() => Math.random() - 0.5);
-        setSpeakers(shuffledSpeakers);
-      } catch (error) {
-        console.error('Error fetching speakers:', error);
-        setSpeakers([]);
-      }
-    };
-
-    fetchSpeakers();
-  }, []);
-
-  // Auto-advance carousel
-  useEffect(() => {
-    if (!api || speakers.length <= 3) return;
+    if (!apiCarousel || speakers.length <= 3) return;
     
     const interval = setInterval(() => {
-      api.scrollNext();
+      apiCarousel.scrollNext();
     }, 3000);
     
     return () => clearInterval(interval);
-  }, [api, speakers.length]);
+  }, [apiCarousel, speakers.length]);
 
   return (
     <section className="py-20 bg-gray-50">
@@ -68,7 +51,7 @@ const FeaturedSpeakers = () => {
         
         <div className="relative">
           <Carousel 
-            setApi={setApi}
+            setApi={setApiCarousel}
             className="w-full max-w-5xl mx-auto"
             opts={{
               align: "start",

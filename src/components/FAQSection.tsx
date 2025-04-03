@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import eventData from '@/data/event.json';
 
 interface FAQ {
   question: string;
@@ -12,22 +13,7 @@ interface FAQ {
 }
 
 const FAQSection = () => {
-  const [faqs, setFaqs] = useState<FAQ[]>([]);
-
-  useEffect(() => {
-    const fetchFAQs = async () => {
-      try {
-        const response = await fetch('/data/event.json');
-        const data = await response.json();
-        setFaqs(data.faqs || []);
-      } catch (error) {
-        console.error('Error fetching FAQs:', error);
-        setFaqs([]);
-      }
-    };
-
-    fetchFAQs();
-  }, []);
+  const faqs = eventData.faqs || [];
 
   return (
     <section id="faq" className="py-20 bg-gray-50">

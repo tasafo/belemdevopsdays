@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
+import sponsorsData from '@/data/sponsors.json';
 
 interface Sponsor {
   id: string;
@@ -17,29 +18,12 @@ interface SponsorLevel {
 }
 
 const SponsorsSection = () => {
-  const [sponsorLevels, setSponsorLevels] = useState<SponsorLevel[]>([]);
+  const sponsorLevels = sponsorsData.sponsor_levels || [];
 
-  useEffect(() => {
-    const fetchSponsors = async () => {
-      try {
-        const response = await fetch('/data/sponsors.json');
-        const data = await response.json();
-        setSponsorLevels(data.sponsor_levels || []);
-      } catch (error) {
-        console.error('Error fetching sponsors:', error);
-        setSponsorLevels([]);
-      }
-    };
-
-    fetchSponsors();
-  }, []);
-
-  // Filter for main sponsor levels (exclude community and support)
   const mainLevels = sponsorLevels.filter(
-    level => !['community', 'support'].includes(level.id)
-  ).slice(0, 3);
+    level => level.id !== 'community'
+  );
   
-  // Get community sponsors separately
   const communityLevel = sponsorLevels.find(level => level.id === 'community');
 
   return (

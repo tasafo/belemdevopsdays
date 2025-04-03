@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import talksData from '@/data/talks.json';
+import speakersData from '@/data/speakers.json';
 
 interface Talk {
   id: string;
@@ -28,43 +30,19 @@ interface TalksData {
 }
 
 const ScheduleHighlights = () => {
-  const [highlights, setHighlights] = useState<(Talk & { speaker?: Speaker })[]>([]);
+  const allTalks = talksData.days.flatMap((day) => 
+    day.talks.filter((talk) => talk.type === "talk")
+  );
+  
+  const shuffled = [...allTalks].sort(() => Math.random() - 0.5);
+  const selectedTalks = shuffled.slice(0, 3);
+  
+  const talksWithSpeakers = selectedTalks.map((talk: Talk) => {
+    const speaker = speakersData.speakers.find((s: Speaker) => s.id === talk.speaker_id);
+    return { ...talk, speaker };
+  });
 
-  useEffect(() => {
-    const fetchTalksAndSpeakers = async () => {
-      try {
-        // Fetch talks
-        const talksResponse = await fetch('/data/talks.json');
-        const talksData = await talksResponse.json() as TalksData;
-        
-        // Fetch speakers
-        const speakersResponse = await fetch('/data/speakers.json');
-        const speakersData = await speakersResponse.json();
-        
-        // Filter talks of type "talk" only
-        const allTalks = talksData.days.flatMap((day) => 
-          day.talks.filter((talk) => talk.type === "talk")
-        );
-        
-        // Randomly select 3 talks
-        const shuffled = [...allTalks].sort(() => Math.random() - 0.5);
-        const selected = shuffled.slice(0, 3);
-        
-        // Map speakers to talks
-        const talksWithSpeakers = selected.map((talk: Talk) => {
-          const speaker = speakersData.speakers.find((s: Speaker) => s.id === talk.speaker_id);
-          return { ...talk, speaker };
-        });
-        
-        setHighlights(talksWithSpeakers);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-        setHighlights([]);
-      }
-    };
-
-    fetchTalksAndSpeakers();
-  }, []);
+  const [highlights] = useState<(Talk & { speaker?: Speaker })[]>(talksWithSpeakers);
 
   return (
     <section className="py-20 bg-white">

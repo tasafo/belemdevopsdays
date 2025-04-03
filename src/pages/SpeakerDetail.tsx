@@ -1,8 +1,9 @@
-
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from 'lucide-react';
+import speakersData from '@/data/speakers.json';
+import talksData from '@/data/talks.json';
 
 interface Speaker {
   id: string;
@@ -29,36 +30,19 @@ const SpeakerDetail = () => {
   const { id } = useParams<{ id: string }>();
   const [speaker, setSpeaker] = useState<Speaker | null>(null);
   const [talks, setTalks] = useState<Talk[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const fetchSpeakerAndTalks = async () => {
-      try {
-        setLoading(true);
-        // Fetch speaker
-        const speakersResponse = await fetch('/data/speakers.json');
-        const speakersData = await speakersResponse.json();
-        const speakerData = speakersData.speakers.find((s: Speaker) => s.id === id) || null;
-        setSpeaker(speakerData);
-
-        // Fetch talks
-        if (speakerData) {
-          const talksResponse = await fetch('/data/talks.json');
-          const talksData = await talksResponse.json();
-          const speakerTalks = talksData.days.flatMap((day: any) => 
-            day.talks.filter((talk: any) => talk.speaker_id === id)
-          );
-          setTalks(speakerTalks);
-        }
-      } catch (error) {
-        console.error('Error fetching speaker data:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
     if (id) {
-      fetchSpeakerAndTalks();
+      const speakerData = speakersData.speakers.find((s: Speaker) => s.id === id) || null;
+      setSpeaker(speakerData);
+
+      if (speakerData) {
+        const speakerTalks = talksData.days.flatMap((day: any) => 
+          day.talks.filter((talk: any) => talk.speaker_id === id)
+        );
+        setTalks(speakerTalks);
+      }
     }
   }, [id]);
 

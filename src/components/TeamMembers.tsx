@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import { Twitter, Linkedin } from 'lucide-react';
+import teamData from '@/data/team_members.json';
 
 interface TeamMember {
   name: string;
@@ -11,24 +12,8 @@ interface TeamMember {
 }
 
 const TeamMembers = () => {
-  const [members, setMembers] = useState<TeamMember[]>([]);
-
-  useEffect(() => {
-    const fetchTeamMembers = async () => {
-      try {
-        const response = await fetch('/data/team_members.json');
-        const data = await response.json();
-        // Randomize the order of team members
-        const shuffledMembers = [...data.team_members || []].sort(() => Math.random() - 0.5);
-        setMembers(shuffledMembers);
-      } catch (error) {
-        console.error('Error fetching team members:', error);
-        setMembers([]);
-      }
-    };
-
-    fetchTeamMembers();
-  }, []);
+  const shuffledMembers = [...teamData.team_members || []].sort(() => Math.random() - 0.5);
+  const [members] = useState<TeamMember[]>(shuffledMembers);
 
   return (
     <section className="py-20 bg-white">
@@ -89,8 +74,8 @@ const TeamMembers = () => {
             ))}
           </CarouselContent>
           <div className="flex justify-center mt-4">
-            <CarouselPrevious className="relative static left-0 right-auto translate-y-0 mr-2" />
-            <CarouselNext className="relative static left-auto right-0 translate-y-0" />
+            <CarouselPrevious className="relative left-0 right-auto translate-y-0 mr-2" />
+            <CarouselNext className="relative left-auto right-0 translate-y-0" />
           </div>
         </Carousel>
       </div>
