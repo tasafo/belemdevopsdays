@@ -33,7 +33,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <Link href="/" className="text-primary font-bold text-xl flex items-center flex-shrink-0">
             <img
-              src="/logo.png"
+              src="/belemdevopsdays/logo.png"
               alt="DevOpsDays Belém Logo"
               className="h-8 sm:h-12 mr-2"
             />
