@@ -17,57 +17,57 @@ const teamMembers: TeamMembers = {
       "employer": "Idopter Labs",
       "image": "/belemdevopsdays/organizers/paulo-igor.jpg",
       "twitter": "pigodinho",
-      "linkedin": "https://www.linkedin.com/in/pigodinho/"
+      "linkedin": "pigodinho"
     },
     {
       "name": "Fábio Figueiredo",
       "employer": "SysMap",
       "image": "/belemdevopsdays/organizers/fabio-figueiredo.jpg",
       "twitter": "fabiolimaf",
-      "linkedin": "https://www.linkedin.com/in/fabiolimaf/"
+      "linkedin": "fabiolimaf"
     },
     {
       "name": "Iago Cavalcante",
       "employer": "Woovi",
       "image": "/belemdevopsdays/organizers/iago.jpg",
       "twitter": "iagoangelimc",
-      "linkedin": "https://www.linkedin.com/in/iago-a-cavalcante/"
+      "linkedin": "iago-a-cavalcante"
     },
     {
       "name": "Ricardo Casseb",
       "employer": "Idopter Labs",
       "image": "/belemdevopsdays/organizers/ricardo-casseb.jpg",
-      "linkedin": "https://www.linkedin.com/in/ricardocasseb/"
+      "linkedin": "ricardocasseb"
     },
     {
       "name": "Ryan Ricardo de Souza",
       "employer": "CR2 Transparência Pública",
       "image": "/belemdevopsdays/organizers/ryan.jpg",
-      "linkedin": "https://www.linkedin.com/in/theunrealryan/"
+      "linkedin": "theunrealryan"
     },
     {
       "name": "Igor Dantas",
       "employer": "C6 Bank",
       "image": "/belemdevopsdays/organizers/igor-dantas.jpg",
-      "linkedin": "https://www.linkedin.com/in/igor-dantas/"
+      "linkedin": "igor-dantas"
     },
     {
       "name": "Thalyson Wilker",
       "employer": "EasyGestor",
       "image": "/belemdevopsdays/organizers/thalyson.jpeg",
-      "linkedin": "https://www.linkedin.com/in/thalysonwilker/"
+      "linkedin": "thalysonwilker"
     },
     {
       "name": "João Baganha",
       "employer": "CESUPA",
       "image": "/belemdevopsdays/organizers/joao-baganha.jpg",
-      "linkedin": "https://www.linkedin.com/in/joaopedrobaganha"
+      "linkedin": "joaopedrobaganha"
     },
     {
       "name": "Tiago Danin",
       "employer": "Idopter Labs",
       "image": "/belemdevopsdays/organizers/tiago-danin.jpeg",
-      "linkedin": "https://www.linkedin.com/in/tiagodanin/"
+      "linkedin": "tiagodanin"
     }
   ]
 };

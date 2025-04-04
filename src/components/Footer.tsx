@@ -51,18 +51,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/patrocinio" className="hover:text-secondary-light transition-colors">
-                  Patrocínio
-                </Link>
-              </li>
-              <li>
-                <Link href="/codigo-de-conduta" className="hover:text-secondary-light transition-colors">
-                  Código de Conduta
-                </Link>
-              </li>
-              <li>
-                <Link href="/contato" className="hover:text-secondary-light transition-colors">
-                  Contato
+                <Link href="/organizacao" className="hover:text-secondary-light transition-colors">
+                  Organização
                 </Link>
               </li>
             </ul>
@@ -97,7 +87,7 @@ const Footer = () => {
           <div className="text-left">
             <h3 className="text-xl font-bold mb-4 text-left">Contato</h3>
             <p className="mb-2 text-left">
-              Para dúvidas ou informações:
+              Para dúvidas, informações ou patrocínio:
             </p>
             <a
               href="mailto:belem@devopsdays.org"
