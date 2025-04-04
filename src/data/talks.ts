@@ -26,9 +26,7 @@ const talks: TalksData = {
       "name": "Main Track"
     }
   ],
-  "talks": [
-
-  ]
+  "talks": []
 };
 
 export default talks; 

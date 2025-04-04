@@ -15,7 +15,7 @@ export default function SpeakersPage ()  {
   };
 
   
-  if (speakers.speakers.length === 0) {
+  if (speakers.length === 0) {
     return (
       <EmptyState
         title="Palestrantes"
@@ -35,7 +35,7 @@ export default function SpeakersPage ()  {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {speakers.speakers.map((speaker) => (
+          {speakers.map((speaker) => (
             <SpeakerCard key={speaker.id} speaker={speaker} />
           ))}
         </div>

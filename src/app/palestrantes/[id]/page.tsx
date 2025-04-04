@@ -4,23 +4,24 @@ import speakers from '@/data/speakers';
 import talks from '@/data/talks';
 import Image from 'next/image';
 import { Twitter, Linkedin, Github, Mail, Calendar } from 'lucide-react';
+import Link from 'next/link';
 
 type Props = {
   params: { id: string };
 };
 
 export async function generateStaticParams() {
-  if (!speakers.speakers || speakers.speakers.length === 0) {
+  if (!speakers || speakers.length === 0) {
     return [{ id: 'placeholder' }];
   }
   
-  return speakers.speakers.map((speaker) => ({
+  return speakers.map((speaker) => ({
     id: speaker.id,
   }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const speaker = speakers.speakers.find(s => s.id === params.id);
+  const speaker = speakers.find(s => s.id === params.id);
 
   if (!speaker) {
     return {
@@ -36,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default function SpeakerDetailPage({ params }: Props) {
   const { id } = params;
-  const speaker = speakers.speakers.find((s) => s.id === id);
+  const speaker = speakers.find((s) => s.id === id);
   const speakerTalks = talks.talks.filter((talk) => talk.speaker_id === id);
 
   if (!speaker) {
@@ -49,8 +50,21 @@ export default function SpeakerDetailPage({ params }: Props) {
   }
 
   return (
-    <div className="pt-24 pb-12">
+    <div className="min-h-screen pt-24 pb-12">
       <div className="container mx-auto px-4 py-12">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">Palestrante</h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Conheça o palestrante
+          </p>
+          <Link
+            href="/palestrantes"
+            className="text-primary hover:underline inline-flex items-center"
+          >
+            ← Voltar para a lista de palestrantes
+          </Link>
+        </div>
+        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-1">
             <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center">

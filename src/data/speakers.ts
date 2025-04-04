@@ -13,12 +13,7 @@ export interface Speaker {
   social: SocialMedia;
 }
 
-export interface Speakers {
-  speakers: Speaker[];
-}
+const speakers: Speaker[] = []
 
-const speakers: Speakers = {
-  "speakers": []
-};
 
 export default speakers; 

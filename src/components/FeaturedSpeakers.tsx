@@ -28,7 +28,7 @@ interface Speaker {
 }
 
 const FeaturedSpeakers = () => {
-  const speakers = [...speakersData.speakers || []].sort(() => Math.random() - 0.5);
+  const speakers = [...speakersData || []].sort(() => Math.random() - 0.5);
   const [apiCarousel, setApiCarousel] = useState<any>(null);
 
   useEffect(() => {

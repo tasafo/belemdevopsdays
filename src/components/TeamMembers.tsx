@@ -14,7 +14,7 @@ interface TeamMember {
 }
 
 const TeamMembers = () => {
-  const members = [...teamData.team_members || []].sort(() => Math.random() - 0.5);
+  const members = [...teamData || []].sort(() => Math.random() - 0.5);
   const [apiCarousel, setApiCarousel] = useState<any>(null);
 
   useEffect(() => {

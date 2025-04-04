@@ -118,7 +118,7 @@ const sponsors: Sponsors = {
         },
         {
           "id": "acaivalley",
-          "name": "Acaí Vally",
+          "name": "Acaí Valley",
           "url": "https://www.acaivalley.com.br/",
           "logo": "/belemdevopsdays/sponsors/acai-valley.png"
         }
