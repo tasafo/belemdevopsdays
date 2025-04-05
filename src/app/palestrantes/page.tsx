@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function SpeakersPage ()  {
   const handleSubmitTalk = () => {
-    window.location.href = 'https://www.papercall.io/devopsdaysbelem2025';
+    window.location.href = 'https://www.papercall.io/devopsdays-belem-2025';
   };
 
   

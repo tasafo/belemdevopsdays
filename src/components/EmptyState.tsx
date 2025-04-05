@@ -11,7 +11,7 @@ const EmptyState = ({
 }: EmptyStateProps) => {
 
   const onButtonClick = () => {
-    window.location.href = 'https://www.papercall.io/devopsdaysbelem2025';
+    window.location.href = 'https://www.papercall.io/devopsdays-belem-2025';
   };
 
   return (

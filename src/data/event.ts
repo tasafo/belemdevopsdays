@@ -57,7 +57,7 @@ const event: Event = {
     "start": "2025-03-01T00:00:00-03:00",
     "end": "2025-04-06T23:59:59-03:00",
     "announce": "2025-04-21T23:59:59-03:00",
-    "link": "https://www.papercall.io/devopsdaysbelem2025",
+    "link": "https://www.papercall.io/devopsdays-belem-2025",
     "open": true
   },
   "social": {
@@ -83,7 +83,7 @@ const event: Event = {
     },
     {
       "question": "Posso submeter uma palestra?",
-      "answer": "Sim! Nosso Call for Papers estará aberto de 01/03/2025 até 06/04/2025. Você pode submeter sua proposta através do nosso site."
+      "answer": "Sim! Nosso Call for Papers estará aberto de 01/03/2025 até 14/04/2025. Você pode submeter sua proposta através do nosso site."
     },
     {
       "question": "Haverá certificado de participação?",
