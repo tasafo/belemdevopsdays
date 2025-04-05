@@ -18,14 +18,27 @@ export const metadata: Metadata = {
 
 const Sponsors = () => {
   const sponsorLevels = [
-    { name: 'Safo¹', status: 'Disponível', tickets: '(preço especial)¹', space: '-', websiteLogo: '✓', marketingLogo: '-', bannerHighlight: '-', marketingKit: '-', socialMedia: '✓' },
-    { name: 'Bronze', status: 'Disponível', tickets: '1', space: '-', websiteLogo: '✓', marketingLogo: '-', bannerHighlight: '-', marketingKit: '-', socialMedia: '✓' },
-    { name: 'Prata', status: 'Disponível', tickets: '3', space: '-', websiteLogo: '✓', marketingLogo: '✓', bannerHighlight: '-', marketingKit: '✓', socialMedia: '✓' },
-    { name: 'Ouro', status: 'Disponível', tickets: '5', space: '-', websiteLogo: '✓', marketingLogo: '✓', bannerHighlight: '-', marketingKit: '✓', socialMedia: '✓' },
-    { name: 'Platina', status: 'Disponível', tickets: '10', space: '-', websiteLogo: '✓', marketingLogo: '✓', bannerHighlight: '✓', marketingKit: '✓', socialMedia: '✓' },
-    { name: 'Diamante', status: 'Disponível', tickets: '15', space: '✓', websiteLogo: '✓', marketingLogo: '✓', bannerHighlight: '✓', marketingKit: '✓', socialMedia: '✓' },
-    { name: 'Comunidade²', status: 'Disponível', tickets: '-', space: '-', websiteLogo: '✓', marketingLogo: '-', bannerHighlight: '-', marketingKit: '-', socialMedia: '✓' },
+    { name: 'Safo¹', contribuicao: 'R$ 300,00', status: 'Disponível', tickets: '(preço especial)¹', space: false, websiteLogo: true, marketingLogo: false, bannerHighlight: false, marketingKit: false, socialMedia: true, },
+    { name: 'Bronze', contribuicao: 'R$ 700,00', status: 'Disponível', tickets: '1', space: false, websiteLogo: true, marketingLogo: false, bannerHighlight: false, marketingKit: false, socialMedia: true, },
+    { name: 'Prata', contribuicao: 'R$ 1.000,00', status: 'Disponível', tickets: '3', space: false, websiteLogo: true, marketingLogo: true, bannerHighlight: false, marketingKit: true, socialMedia: true, },
+    { name: 'Ouro', contribuicao: 'R$ 2.000,00', status: 'Disponível', tickets: '5', space: false, websiteLogo: true, marketingLogo: true, bannerHighlight: false, marketingKit: true, socialMedia: true, },
+    { name: 'Platina', contribuicao: 'R$ 3.000,00', status: 'Disponível', tickets: '10', space: false, websiteLogo: true, marketingLogo: true, bannerHighlight: true, marketingKit: true, socialMedia: true, },
+    { name: 'Diamante', contribuicao: 'R$ 5.000,00', status: 'Disponível', tickets: '15', space: true, websiteLogo: true, marketingLogo: true, bannerHighlight: true, marketingKit: true, socialMedia: true, },
+    { name: 'Comunidade²', contribuicao: false, status: 'Disponível', tickets: false, space: false, websiteLogo: true, marketingLogo: false, bannerHighlight: false, marketingKit: false, socialMedia: true, },
   ];
+
+  const getLabel = (value: string | boolean) => {
+    if (value === true) {
+       return <p className="text-green-800 text-lg font-bold">✓</p>;
+    }
+
+    
+    if (value === false) {
+      return <p className="text-gray-800 text-lg">-</p>;
+    };
+
+    return <p className="text-md">{value}</p>;
+  };
 
   return (
     <div className="min-h-screen pt-24 pb-12">
@@ -51,7 +64,7 @@ const Sponsors = () => {
             </div>
 
             <h2 className="text-2xl font-bold mb-6 text-primary">Níveis de patrocínio</h2>
-            
+
             {/* Mobile View */}
             <div className="md:hidden space-y-6">
               {sponsorLevels.map((level, index) => (
@@ -63,32 +76,36 @@ const Sponsors = () => {
                       <span className="bg-green-100 text-green-800 text-xs font-medium px-2 py-0.5 rounded">{level.status}</span>
                     </div>
                     <div className="flex justify-between">
+                      <span className="text-gray-600">Contribuição:</span>
+                      <span>{getLabel(level.contribuicao)}</span>
+                    </div>
+                    <div className="flex justify-between">
                       <span className="text-gray-600">Inscrições:</span>
-                      <span>{level.tickets}</span>
+                      <span>{getLabel(level.tickets)}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-600">Espaço para divulgação:</span>
-                      <span>{level.space}</span>
+                      <span>{getLabel(level.space)}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-600">Logo no site:</span>
-                      <span>{level.websiteLogo}</span>
+                      <span>{getLabel(level.websiteLogo)}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-600">Logo marketing:</span>
-                      <span>{level.marketingLogo}</span>
+                      <span>{getLabel(level.marketingLogo)}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-600">Destaque Banner:</span>
-                      <span>{level.bannerHighlight}</span>
+                      <span>{getLabel(level.bannerHighlight)}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-600">Material marketing:</span>
-                      <span>{level.marketingKit}</span>
+                      <span>{getLabel(level.marketingKit)}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-600">Redes Sociais:</span>
-                      <span>{level.socialMedia}</span>
+                      <span>{getLabel(level.socialMedia)}</span>
                     </div>
                   </div>
                 </Card>
@@ -100,15 +117,21 @@ const Sponsors = () => {
               <Table>
                 <TableHeader>
                   <TableRow className="bg-gray-100">
-                    <TableHead className="whitespace-nowrap">Benefícios</TableHead>
+                    <TableHead className="whitespace-nowrap font-bold text-black">Benefícios</TableHead>
                     {sponsorLevels.map((level, index) => (
-                      <TableHead key={index} className="text-center whitespace-nowrap">{level.name}</TableHead>
+                      <TableHead key={index} className="text-center whitespace-nowrap font-bold text-black">{level.name}</TableHead>
                     ))}
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   <TableRow>
-                    <TableCell className="font-medium whitespace-nowrap">Status</TableCell>
+                    <TableCell className="whitespace-nowrap font-bold">Contribuição</TableCell>
+                    {sponsorLevels.map((level, index) => (
+                      <TableCell key={index} className="text-center">{getLabel(level.contribuicao)}</TableCell>
+                    ))}
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="whitespace-nowrap font-bold">Status</TableCell>
                     {sponsorLevels.map((level, index) => (
                       <TableCell key={index} className="text-center">
                         <span className="bg-green-100 text-green-800 text-xs font-medium px-2 py-0.5 rounded">{level.status}</span>
@@ -116,45 +139,45 @@ const Sponsors = () => {
                     ))}
                   </TableRow>
                   <TableRow>
-                    <TableCell className="font-medium whitespace-nowrap">Inscrições para o evento</TableCell>
+                    <TableCell className="whitespace-nowrap font-bold">Inscrições para o evento</TableCell>
                     {sponsorLevels.map((level, index) => (
-                      <TableCell key={index} className="text-center">{level.tickets}</TableCell>
+                      <TableCell key={index} className="text-center">{getLabel(level.tickets)}</TableCell>
                     ))}
                   </TableRow>
                   <TableRow>
-                    <TableCell className="font-medium whitespace-nowrap">Espaço para divulgação no local</TableCell>
+                    <TableCell className="whitespace-nowrap font-bold">Espaço para divulgação no local</TableCell>
                     {sponsorLevels.map((level, index) => (
-                      <TableCell key={index} className="text-center">{level.space}</TableCell>
+                      <TableCell key={index} className="text-center">{getLabel(level.space)}</TableCell>
                     ))}
                   </TableRow>
                   <TableRow>
-                    <TableCell className="font-medium whitespace-nowrap">Logo no site do evento</TableCell>
+                    <TableCell className="whitespace-nowrap font-bold">Logo no site do evento</TableCell>
                     {sponsorLevels.map((level, index) => (
-                      <TableCell key={index} className="text-center">{level.websiteLogo}</TableCell>
+                      <TableCell key={index} className="text-center">{getLabel(level.websiteLogo)}</TableCell>
                     ))}
                   </TableRow>
                   <TableRow>
-                    <TableCell className="font-medium whitespace-nowrap">Logo nos materiais de marketing</TableCell>
+                    <TableCell className="whitespace-nowrap font-bold">Logo nos materiais de marketing</TableCell>
                     {sponsorLevels.map((level, index) => (
-                      <TableCell key={index} className="text-center">{level.marketingLogo}</TableCell>
+                      <TableCell key={index} className="text-center">{getLabel(level.marketingLogo)}</TableCell>
                     ))}
                   </TableRow>
                   <TableRow>
-                    <TableCell className="font-medium whitespace-nowrap">Destaque no Banner</TableCell>
+                    <TableCell className="whitespace-nowrap font-bold">Destaque no Banner</TableCell>
                     {sponsorLevels.map((level, index) => (
-                      <TableCell key={index} className="text-center">{level.bannerHighlight}</TableCell>
+                      <TableCell key={index} className="text-center">{getLabel(level.bannerHighlight)}</TableCell>
                     ))}
                   </TableRow>
                   <TableRow>
-                    <TableCell className="font-medium whitespace-nowrap">Material de marketing nos kits</TableCell>
+                    <TableCell className="whitespace-nowrap font-bold">Material de marketing nos kits</TableCell>
                     {sponsorLevels.map((level, index) => (
-                      <TableCell key={index} className="text-center">{level.marketingKit}</TableCell>
+                      <TableCell key={index} className="text-center">{getLabel(level.marketingKit)}</TableCell>
                     ))}
                   </TableRow>
                   <TableRow>
-                    <TableCell className="font-medium whitespace-nowrap">Divulgação nas Redes Sociais</TableCell>
+                    <TableCell className="whitespace-nowrap font-bold">Divulgação nas Redes Sociais</TableCell>
                     {sponsorLevels.map((level, index) => (
-                      <TableCell key={index} className="text-center">{level.socialMedia}</TableCell>
+                      <TableCell key={index} className="text-center">{getLabel(level.socialMedia)}</TableCell>
                     ))}
                   </TableRow>
                 </TableBody>

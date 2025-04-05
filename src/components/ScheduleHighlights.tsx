@@ -14,7 +14,7 @@ const ScheduleHighlights = () => {
   const selectedTalks = shuffled.slice(0, 3);
   
   const talksWithSpeakers = selectedTalks.map((talk: Talk) => {
-    const speaker = speakersData.speakers.find((s: Speaker) => s.id === talk.speaker_id);
+    const speaker = speakersData.find((s: Speaker) => s.id === talk.speaker_id);
     return { ...talk, speaker };
   });
 

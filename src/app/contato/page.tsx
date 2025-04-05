@@ -77,10 +77,10 @@ export default function ContactPage() {
               <div>
                 <h3 className="font-bold text-lg mb-1">Como posso submeter uma palestra?</h3>
                 <p className="text-gray-700 mb-3">
-                  As submissões de palestras são feitas através da plataforma PaperCall. O período de submissão é de 01/03/2025 até 06/04/2025.
+                  As submissões de palestras são feitas através da plataforma PaperCall. O período de submissão é de 01/03/2025 até 14/04/2025.
                 </p>
                 <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
-                  <a href="https://www.papercall.io/devopsdaysbelem2025" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.papercall.io/devopsdays-belem-2025" target="_blank" rel="noopener noreferrer">
                     Submeta sua Palestra
                   </a>
                 </Button>

@@ -47,7 +47,14 @@ const sponsors: Sponsors = {
       "id": "gold",
       "label": "Ouro",
       "amount": "R$ 2.000,00",
-      "sponsors": []
+      "sponsors": [
+        {
+          "id": "easygestor",
+          "name": "EasyGestor",
+          "url": "https://easygestor.com/",
+          "logo": "/belemdevopsdays/sponsors/easygestor.png"
+        }
+      ]
     },
     {
       "id": "silver",
@@ -90,6 +97,30 @@ const sponsors: Sponsors = {
           "name": "Devs Norte",
           "url": "https://www.instagram.com/devsnorte/",
           "logo": "/belemdevopsdays/sponsors/devsnorte.png"
+        },
+        {
+          "id": "elasnatec",
+          "name": "Elas na Tecnologia",
+          "url": "https://www.instagram.com/elas.na.tecnologia/",
+          "logo": "/belemdevopsdays/sponsors/elas-na-tec-bel-2025.png"
+        },
+        {
+          "id": "paralivre",
+          "name": "ParaLivre.org",
+          "url": "https://www.paralivre.org/",
+          "logo": "/belemdevopsdays/sponsors/paralivre.png"
+        },
+        {
+          "id": "paratic",
+          "name": "ParáTIC",
+          "url": "https://www.paratic.com.br/",
+          "logo": "/belemdevopsdays/sponsors/paratic.png"
+        },
+        {
+          "id": "acaivalley",
+          "name": "Acaí Valley",
+          "url": "https://www.acaivalley.com.br/",
+          "logo": "/belemdevopsdays/sponsors/acai-valley.png"
         }
       ]
     },
@@ -109,12 +140,6 @@ const sponsors: Sponsors = {
           "name": "Kube Events",
           "url": "https://kube.events/",
           "logo": "/belemdevopsdays/sponsors/kubeevents.png"
-        },
-        {
-          "id": "elasnatec",
-          "name": "Elas na Tecnologia",
-          "url": "https://www.instagram.com/elas.na.tecnologia/",
-          "logo": "/belemdevopsdays/sponsors/elas-na-tec-bel-2025.png"
         }
       ]
     }

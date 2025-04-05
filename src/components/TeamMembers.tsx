@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import { Twitter, Linkedin } from 'lucide-react';
-import teamData from '@/data/team_members';
+import teamData from '@/data/teamMembers';
 
 interface TeamMember {
   name: string;
@@ -14,7 +14,7 @@ interface TeamMember {
 }
 
 const TeamMembers = () => {
-  const members = [...teamData.team_members || []].sort(() => Math.random() - 0.5);
+  const members = [...teamData || []].sort(() => Math.random() - 0.5);
   const [apiCarousel, setApiCarousel] = useState<any>(null);
 
   useEffect(() => {
@@ -72,7 +72,7 @@ const TeamMembers = () => {
                     )}
                     {member.linkedin && (
                       <a 
-                        href={member.linkedin} 
+                        href={`https://www.linkedin.com/in/${member.linkedin}`}
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="text-blue-700 hover:text-blue-900"

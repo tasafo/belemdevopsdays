@@ -33,7 +33,7 @@ const Hero = () => {
               </a>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary-light hover:text-white px-8 py-6 text-lg">
-              <a href="https://www.papercall.io/devopsdaysbelem2025" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.papercall.io/devopsdays-belem-2025" target="_blank" rel="noopener noreferrer">
                 Submeta sua Palestra
               </a>
             </Button>
