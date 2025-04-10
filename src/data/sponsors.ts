@@ -121,6 +121,24 @@ const sponsors: Sponsors = {
           "name": "Acaí Valley",
           "url": "https://www.acaivalley.com.br/",
           "logo": "/belemdevopsdays/sponsors/acai-valley.png"
+        },
+        {
+          "id": "awsbelem",
+          "name": "AWS User Group Belém",
+          "url": "https://www.instagram.com/awsbelem/",
+          "logo": "/belemdevopsdays/sponsors/aws-belem.svg"
+        },
+        {
+          "id": "beljogos",
+          "name": "BelJogos",
+          "url": "https://www.beljogos.com.br",
+          "logo": "/belemdevopsdays/sponsors/beljogos.png"
+        },
+        {
+          "id": "cesupa",
+          "name": "CESUPA",
+          "url": "https://www.cesupa.br/",
+          "logo": "/belemdevopsdays/sponsors/cesupa.png"
         }
       ]
     },
