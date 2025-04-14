@@ -34,6 +34,12 @@ const sponsors: Sponsors = {
           "name": "Vibe",
           "url": "https://www.vibetecnologia.com/",
           "logo": "/belemdevopsdays/sponsors/vibe.avif"
+        },
+        {
+          "id": "techlead",
+          "name": "Techlead",
+          "url": "https://www.techlead.com.br/",
+          "logo": "/belemdevopsdays/sponsors/techlead.webp"
         }
       ]
     },
@@ -53,6 +59,12 @@ const sponsors: Sponsors = {
           "name": "EasyGestor",
           "url": "https://easygestor.com/",
           "logo": "/belemdevopsdays/sponsors/easygestor.png"
+        },
+        {
+          "id": "inteceleri",
+          "name": "Inteceleri",
+          "url": "https://www.inteceleri.com.br/",
+          "logo": "/belemdevopsdays/sponsors/inteceleri.png"
         }
       ]
     },
@@ -121,6 +133,18 @@ const sponsors: Sponsors = {
           "name": "Acaí Valley",
           "url": "https://www.acaivalley.com.br/",
           "logo": "/belemdevopsdays/sponsors/acai-valley.png"
+        },
+        {
+          "id": "awsbelem",
+          "name": "AWS User Group Belém",
+          "url": "https://www.instagram.com/awsbelem/",
+          "logo": "/belemdevopsdays/sponsors/aws-belem.svg"
+        },
+        {
+          "id": "beljogos",
+          "name": "BelJogos",
+          "url": "http://www.beljogos.com.br",
+          "logo": "/belemdevopsdays/sponsors/beljogos.png"
         }
       ]
     },
@@ -140,6 +164,12 @@ const sponsors: Sponsors = {
           "name": "Kube Events",
           "url": "https://kube.events/",
           "logo": "/belemdevopsdays/sponsors/kubeevents.png"
+        },
+        {
+          "id": "cesupa",
+          "name": "CESUPA",
+          "url": "https://www.cesupa.br/",
+          "logo": "/belemdevopsdays/sponsors/cesupa.png"
         }
       ]
     }
