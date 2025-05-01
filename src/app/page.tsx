@@ -22,9 +22,9 @@ export default function Home() {
         <>
           <ScheduleHighlights />
           <FeaturedSpeakers />
-          <LocationSection />
         </>
       )}
+      <LocationSection />
       <FAQSection />
       <TeamMembers />
     </div>
