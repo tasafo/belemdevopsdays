@@ -40,14 +40,21 @@ const sponsors: Sponsors = {
           "name": "Techlead",
           "url": "https://www.techlead.com.br/",
           "logo": "/belemdevopsdays/sponsors/techlead.webp"
-        }
+        },
       ]
     },
     {
       "id": "platinum",
       "label": "Platina",
       "amount": "R$ 3.000,00",
-      "sponsors": []
+      "sponsors": [
+        {
+          "id": "linuxtips",
+          "name": "LINUXtips",
+          "url": "https://linuxtips.io",
+          "logo": "/belemdevopsdays/sponsors/linuxtips.png"
+        },
+      ]
     },
     {
       "id": "gold",
@@ -145,6 +152,18 @@ const sponsors: Sponsors = {
           "name": "BelJogos",
           "url": "http://www.beljogos.com.br",
           "logo": "/belemdevopsdays/sponsors/beljogos.png"
+        },
+        {
+          "id": "caesoft",
+          "name": "CAESoft UEPA",
+          "url": "https://www.instagram.com/caesoft.uepa",
+          "logo": "/belemdevopsdays/sponsors/caesoft.png"
+        },
+        {
+          "id": "sucesupa",
+          "name": "SUCESU PA",
+          "url": "https://sucesupa.org.br/",
+          "logo": "/belemdevopsdays/sponsors/sucesu-pa.png"
         }
       ]
     },
@@ -170,7 +189,13 @@ const sponsors: Sponsors = {
           "name": "CESUPA",
           "url": "https://www.cesupa.br/",
           "logo": "/belemdevopsdays/sponsors/cesupa.png"
-        }
+        },
+        {
+          "id": "aws",
+          "name": "Amazon Web Services",
+          "url": "https://devopsdays.org/",
+          "logo": "/belemdevopsdays/sponsors/amazon-web-services.png"
+        },
       ]
     }
   ]
