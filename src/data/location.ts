@@ -14,7 +14,7 @@ export interface Location {
 }
 
 const location: Location = {
-  "venue": "Shopping Pátio Belém (Espaço G5 - Estacionamento G5 no 4º andar)",
+  "venue": "Shopping Pátio Belém - Espaço G5 (4º Andar)",
   "address": "Tv. Padre Eutíquio, 1078 - Batista Campos",
   "city": "Belém",
   "state": "PA",
