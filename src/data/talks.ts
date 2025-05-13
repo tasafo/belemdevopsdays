@@ -7,7 +7,7 @@ export interface Talk {
   id: string;
   title: string;
   time: string;
-  type: 'talk' | 'break' | 'other';
+  type: 'talk' |'keynote' | 'break' | 'other';
   track: string;
   date: string;
   speaker_id?: string;
@@ -40,6 +40,14 @@ const talks: TalksData = {
       "title": "Abertura",
       "time": "09:30",
       "type": "other",
+      "track": "main",
+      "date": "2025-06-07"
+    },
+    {
+      "id": "keynote-abertura",
+      "title": "Keynote de Abertura",
+      "time": "09:45",
+      "type": "keynote",
       "track": "main",
       "date": "2025-06-07"
     },
@@ -90,6 +98,38 @@ const talks: TalksData = {
       "date": "2025-06-07",
       "speaker_id": "lucas-alberto",
       "description": "Esta palestra apresenta o conceito de Infraestrutura como Software (IaS) como uma evolução do IaC, propondo um novo paradigma para gerenciar todo o ciclo de vida da infraestrutura em nuvem. Com foco em auto-recuperação, eliminação de drifts e maior resiliência a APIs instáveis, a sessão destaca o papel do Kubernetes, do operator pattern e de projetos como o Cluster API na construção de soluções cloud native mais robustas e adaptáveis."
+    },
+    {
+      "id": "coffee-break",
+      "title": "Coffee-break",
+      "time": "15:00",
+      "type": "break",
+      "track": "main",
+      "date": "2025-06-07"
+    },
+    {
+      "id": "fishbowl",
+      "title": "Fishbowl",
+      "time": "15:40",
+      "type": "other",
+      "track": "main",
+      "date": "2025-06-07"
+    },
+    {
+      "id": "keynote-encerramento",
+      "title": "Keynote de Encerramento",
+      "time": "16:30",
+      "type": "keynote",
+      "track": "main",
+      "date": "2025-06-07"
+    },
+    {
+      "id": "encerramento-sorteios",
+      "title": "Encerramento e Sorteios",
+      "time": "17:20",
+      "type": "other",
+      "track": "main",
+      "date": "2025-06-07"
     }
   ]
 };
