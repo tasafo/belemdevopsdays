@@ -11,6 +11,8 @@ export interface Speaker {
   company: string;
   photo: string;
   social: SocialMedia;
+  isKeynote?: boolean;
+  role?: string;
 }
 
 const speakers: Speaker[] = [
@@ -54,6 +56,30 @@ const speakers: Speaker[] = [
     social: {
       linkedin: "https://www.linkedin.com/in/lucasrattz/"
     }
+  },
+  {
+    id: "leticia-dornelas",
+    name: "Letícia Dornelas",
+    bio: "Letícia tem mais de 10 anos de atuação na área de tecnologia. Atualmente, desempenha o cargo de Arquiteta de Soluções na AWS, onde apoia clientes do mercado financeiro. Formada pelo IFSP, tem interesse especial por temas como IA Generativa, DevOps, Arquitetura Orientada a Eventos e Serverless.",
+    company: "Amazon Web Services",
+    photo: "https://media.licdn.com/dms/image/v2/D4D03AQHLDRoZUm6fFQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1725046913085?e=1751500800&v=beta&t=6Bu_aEhHyDE8ZnEMVsfHl4VTUHUHNa6hLOKf805xWA4",
+    role: "Solutions Architect",
+    social: {
+      linkedin: "https://www.linkedin.com/in/leticia-dornelas/"
+    },
+    isKeynote: true,
+  },
+  {
+    id: "marcelio-leal",
+    name: "Marcelio Leal",
+    bio: "Com uma trajetória inspiradora, Marcelio é mestre pela UFPA e já passou por gigantes como Amazon e Nubank. Além disso, é cofundador das startups Bhub, Onsee e TS9, e advisor na E-station e Caic. Apaixonado por Software Livre, comunidades e educação, Marcelio é um membro ativo do ecossistema de inovação e startups.",
+    company: "Google",
+    photo: "https://media.licdn.com/dms/image/v2/D4D03AQH9hdlW73CmBg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1708788197849?e=1751500800&v=beta&t=ID3qdhUv7gj7-5T5icX4--eqk_3SwBSlE2YIjgSVqPs",
+    role: "Engineering Manager",
+    social: {
+      linkedin: "https://www.linkedin.com/in/marcelio-leal/"
+    },
+    isKeynote: true
   }
 ]
 

@@ -7,6 +7,7 @@ import FeaturedSpeakers from '@/components/FeaturedSpeakers';
 import LocationSection from '@/components/LocationSection';
 import FAQSection from '@/components/FAQSection';
 import TeamMembers from '@/components/TeamMembers';
+import KeynoteSpeakers from '@/components/KeynoteSpeakers';
 
 export const metadata: Metadata = {
   title: 'DevOpsDays Belém 2025',
@@ -18,12 +19,9 @@ export default function Home() {
     <div className="min-h-screen">
       <Hero />
       <AboutSection />
-      {process.env.NODE_ENV === "development" && (
-        <>
-          <ScheduleHighlights />
-          <FeaturedSpeakers />
-        </>
-      )}
+      <KeynoteSpeakers />
+      <ScheduleHighlights />
+      <FeaturedSpeakers />
       <LocationSection />
       <FAQSection />
       <TeamMembers />
