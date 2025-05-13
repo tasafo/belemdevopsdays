@@ -26,7 +26,18 @@ const talks: TalksData = {
       "name": "Main Track"
     }
   ],
-  "talks": []
+  "talks": [
+    {
+      "id": "devops-career-2025",
+      "title": "Desvendando a Carreira em DevOps: Tendências, Habilidades e Oportunidades 2025",
+      "time": "10:35",
+      "type": "talk",
+      "track": "main",
+      "date": "2025-05-25",
+      "speaker_id": "levi-leopoldino",
+      "description": "Nesta palestra, Levi Leopoldino (Levinux), fundador da DOUG BR, compartilha caminhos práticos para iniciar e crescer na carreira DevOps em 2025, com foco em inclusão, tendências do mercado, habilidades essenciais e oportunidades acessíveis como comunidades e certificações gratuitas — tudo com base em mais de 25 anos de experiência na área."
+    }
+  ]
 };
 
 export default talks; 
