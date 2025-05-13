@@ -34,6 +34,16 @@ const speakers: Speaker[] = [
       twitter: "BritoAllyson",
       linkedin: "https://www.linkedin.com/in/britoallyson/"
     }
+  },
+  {
+    id: "marcelo-sa",
+    name: "Marcelo Sá",
+    bio: "Com uma trajetória que se estende desde 1996 na indústria de TI, sou o CEO da Jambu Tecnologia, Analista de Negócios e Professor de Engenharia de Software. Minha carreira é pautada pela gestão de projetos adotando práticas agilistas e a adoção de tecnologias livres e abertas, destacando-se na engenharia de sistemas no contexto das infraestruturas publicas digitais e Inteligencia Artificial em redes transacionais.\n\nNa vanguarda da inovação tecnológica, minha missão é liderar equipes para entregar soluções que impulsionem o crescimento, sustentabilidade e a qualidade no setor do varejo, educação, saúde e fintech. Com competências consolidadas em Engenharia do Caos, Redes Abertas Transacionais, IA, Blockchain/Web3 e Sistemas de Software, contribuo significativamente para projetos que moldam o futuro da tecnologia da informação e comunicação.",
+    company: "Jambu Tecnologia",
+    photo: "/speakers/marcelo-sa.jpg",
+    social: {
+      linkedin: "https://www.linkedin.com/in/marcelosa/"
+    }
   }
 ]
 

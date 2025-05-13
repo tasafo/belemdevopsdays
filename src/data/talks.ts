@@ -64,13 +64,23 @@ const talks: TalksData = {
       "description": "A palestra apresenta como o KubeVirt permite executar máquinas virtuais dentro do Kubernetes, integrando sistemas legados ao fluxo GitOps com Infraestrutura como Código (IaC). Com demonstrações práticas, mostra como automatizar, versionar e implantar VMs com ArgoCD, oferecendo uma solução moderna e unificada para ambientes híbridos sem reescrever código legado."
     },
     {
-      id:"",
-      title: "Pausa para o Almoço",
-      time: "12:00",
-      type: "break",
-      track: "main",
-      date: "2025-06-07"
+      "id": "almoco",
+      "title": "Pausa para o Almoço",
+      "time": "12:00",
+      "type": "break",
+      "track": "main",
+      "date": "2025-06-07"
     },
+    {
+      "id": "devops-infraestruturas-publicas",
+      "title": "DevOps de Infraestruturas Publicas Digitais: o desafio de orquestrar e manter seguros ambientes que escalam em nível populacional",
+      "time": "13:30",
+      "type": "talk",
+      "track": "main",
+      "date": "2025-06-07",
+      "speaker_id": "marcelo-sa",
+      "description": "A palestra apresenta os desafios técnicos e operacionais da Rede Belém Aberta, a primeira infraestrutura pública digital para educação com protocolo Beckn na América Latina. Serão abordadas estratégias de automação, observabilidade e segurança em ambientes que atendem a milhões, com foco em arquitetura, IaC e governança na nuvem pública para garantir resiliência, escalabilidade e compliance."
+    }
   ]
 };
 
