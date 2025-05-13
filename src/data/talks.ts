@@ -80,6 +80,16 @@ const talks: TalksData = {
       "date": "2025-06-07",
       "speaker_id": "marcelo-sa",
       "description": "A palestra apresenta os desafios técnicos e operacionais da Rede Belém Aberta, a primeira infraestrutura pública digital para educação com protocolo Beckn na América Latina. Serão abordadas estratégias de automação, observabilidade e segurança em ambientes que atendem a milhões, com foco em arquitetura, IaC e governança na nuvem pública para garantir resiliência, escalabilidade e compliance."
+    },
+    {
+      "id": "infraestrutura-como-software",
+      "title": "Infraestrutura como Software: O Futuro do Gerenciamento do Ciclo de Vida de Infraestruturas em Nuvem",
+      "time": "14:30",
+      "type": "talk",
+      "track": "main",
+      "date": "2025-06-07",
+      "speaker_id": "lucas-alberto",
+      "description": "Esta palestra apresenta o conceito de Infraestrutura como Software (IaS) como uma evolução do IaC, propondo um novo paradigma para gerenciar todo o ciclo de vida da infraestrutura em nuvem. Com foco em auto-recuperação, eliminação de drifts e maior resiliência a APIs instáveis, a sessão destaca o papel do Kubernetes, do operator pattern e de projetos como o Cluster API na construção de soluções cloud native mais robustas e adaptáveis."
     }
   ]
 };

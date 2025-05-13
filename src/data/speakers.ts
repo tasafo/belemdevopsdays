@@ -44,6 +44,16 @@ const speakers: Speaker[] = [
     social: {
       linkedin: "https://www.linkedin.com/in/marcelosa/"
     }
+  },
+  {
+    id: "lucas-alberto",
+    name: "Lucas Alberto",
+    bio: "Engenheiro de Plataforma/DevOps focado em soluções nativas para Kubernetes. Atualmente construindo uma plataforma de Kubernetes-as-a-service na Syself.com. Entusiasta de open-source e sistemas distribuídos.",
+    company: "Syself",
+    photo: "/speakers/lucas-alberto.jpg",
+    social: {
+      linkedin: "https://www.linkedin.com/in/lucasrattz/"
+    }
   }
 ]
 
