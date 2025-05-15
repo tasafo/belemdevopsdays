@@ -9,7 +9,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 pt-20 z-10">
         <div className="flex flex-col items-center text-center">
           <img 
-            src="/belemdevopsdays/logo.png" 
+            src="/belemdevopsdays/logo.svg" 
             alt="DevOpsDays Belém Logo" 
             className="w-48 md:w-64 lg:w-80 mb-8" 
           />

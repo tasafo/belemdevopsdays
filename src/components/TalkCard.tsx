@@ -12,6 +12,7 @@ interface TalkCardProps {
 export default function TalkCard({ talk }: TalkCardProps) {
   const isTalk = talk.type === 'talk';
   const isBreak = talk.type === 'break';
+  const isKeynote = talk.type === 'keynote';
 
   let cardClasses = 'p-6 rounded-lg ';
   
@@ -19,11 +20,12 @@ export default function TalkCard({ talk }: TalkCardProps) {
     cardClasses += 'bg-gray-100 border-l-4 border-gray-400';
   } else if (isTalk) {
     cardClasses += 'bg-white shadow-md border-l-4 border-primary';
+  } else if (isKeynote) {
+    cardClasses += 'bg-white shadow-md border-l-4 border-pink-400';
   } else {
     cardClasses += 'bg-accent border-l-4 border-secondary';
   }
 
-  // Speaker data functions inside the component
   const getSpeakerName = (speakerId: string) => {
     const speaker = speakersData.find(s => s.id === speakerId);
     return speaker ? speaker.name : '';
@@ -40,7 +42,7 @@ export default function TalkCard({ talk }: TalkCardProps) {
         {talk.time}
       </div>
       <div className="w-full md:w-5/6">
-        <h3 className={`font-bold ${isTalk ? 'text-xl' : 'text-lg'} mb-2`}>
+        <h3 className={`font-bold ${(isTalk || isKeynote) ? 'text-xl' : 'text-lg'} mb-2`}>
           {talk.title}
         </h3>
         {talk.speaker_id && (

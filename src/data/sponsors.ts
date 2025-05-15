@@ -98,7 +98,14 @@ const sponsors: Sponsors = {
       "id": "safo",
       "label": "Safo",
       "amount": "R$ 300,00",
-      "sponsors": []
+      "sponsors": [
+        {
+          "id": "hageconsulting",
+          "name": "Hage Consulting",
+          "url": "https://hageconsulting.com.br/",
+          "logo": "/belemdevopsdays/sponsors/hage-consulting.webp"
+        }
+      ]
     },
     {
       "id": "community",

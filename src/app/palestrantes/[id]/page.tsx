@@ -114,7 +114,7 @@ export default function SpeakerDetailPage({ params }: Props) {
                       <h3 className="font-semibold text-lg">{talk.title}</h3>
                       <div className="flex items-center text-sm text-muted-foreground mt-1">
                         <Calendar size={16} className="mr-1" />
-                        <span>{talk.time} · {talk.date}</span>
+                        <span>{talk.time} · {new Date(talk.date).toLocaleDateString('pt-BR')}</span>
                       </div>
                       {talk.description && (
                         <p className="mt-2 text-gray-700">{talk.description}</p>

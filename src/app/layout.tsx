@@ -25,6 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
+      <meta name="apple-mobile-web-app-title" content="DevOpsDay Belém" />
       <body className={inter.className}>
         <TooltipProvider>
           <Toaster />
