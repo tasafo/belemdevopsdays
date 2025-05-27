@@ -18,6 +18,18 @@ export interface Speaker {
 
 const speakers: Speaker[] = [
   {
+    id: "marcelio-leal",
+    name: "Marcelio Leal",
+    bio: "Com uma trajetória inspiradora, Marcelio é mestre pela UFPA e já passou por gigantes como Amazon e Nubank. Além disso, é cofundador das startups Bhub, Onsee e TS9, e advisor na E-station e Caic. Apaixonado por Software Livre, comunidades e educação, Marcelio é um membro ativo do ecossistema de inovação e startups.",
+    company: "Google",
+    photo: "/belemdevopsdays/speakers/marcelio-leal.jpg",
+    role: "Engineering Manager",
+    social: {
+      linkedin: "https://www.linkedin.com/in/marcelio-leal/"
+    },
+    isKeynote: true
+  },
+  {
     id: "leticia-dornelas",
     name: "Letícia Dornelas",
     bio: "Letícia tem mais de 10 anos de atuação na área de tecnologia. Atualmente, desempenha o cargo de Arquiteta de Soluções na AWS, onde apoia clientes do mercado financeiro. Formada pelo IFSP, tem interesse especial por temas como IA Generativa, DevOps, Arquitetura Orientada a Eventos e Serverless.",
@@ -29,18 +41,6 @@ const speakers: Speaker[] = [
       instagram: "https://www.instagram.com/levilinux/"
     },
     isKeynote: true,
-  },
-  {
-    id: "marcelio-leal",
-    name: "Marcelio Leal",
-    bio: "Com uma trajetória inspiradora, Marcelio é mestre pela UFPA e já passou por gigantes como Amazon e Nubank. Além disso, é cofundador das startups Bhub, Onsee e TS9, e advisor na E-station e Caic. Apaixonado por Software Livre, comunidades e educação, Marcelio é um membro ativo do ecossistema de inovação e startups.",
-    company: "Google",
-    photo: "/belemdevopsdays/speakers/marcelio-leal.jpg",
-    role: "Engineering Manager",
-    social: {
-      linkedin: "https://www.linkedin.com/in/marcelio-leal/"
-    },
-    isKeynote: true
   },
   {
     id: "levi-leopoldino",
@@ -64,7 +64,7 @@ const speakers: Speaker[] = [
     }
   },
   {
-    id: "tiagoda-danin",
+    id: "tiago-danin",
     name: "Tiago Danin",
     bio: "Sou Desenvolvedor Mobile com mais de 5 anos de experiência, atualmente componho o time da Idopterlabs, também sou pesquisando de segurança por conta própria e curto tudo que envolve tecnologia, inovação e automação. Trabalho com Flutter, Kotlin, Swift, Obj-C, React Native e Javascript, mas também já mexi com frontend, backend e até app pra desktop já fiz. Ultimamente, tô mergulhando em Marketing Digital e Gerência de Produtos para expandir os horizontes além do código. Nas horas vagas, correr pelas ruas, jogar no computador e uma boa música. Tô sempre buscando aprender mais, me desafiar e curtir o caminho.",
     company: "Idopterlabs",
