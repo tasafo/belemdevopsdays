@@ -171,6 +171,12 @@ const sponsors: Sponsors = {
           "name": "SUCESU PA",
           "url": "https://sucesupa.org.br/",
           "logo": "/belemdevopsdays/sponsors/sucesu-pa.png"
+        },
+        {
+          "id": "devops-user-group-brazil",
+          "name": "DevOps User Group Brazil",
+          "url": "https://www.linkedin.com/company/dougbrazil/",
+          "logo": "/belemdevopsdays/sponsors/devops-user-group-brazil.webp"
         }
       ]
     },
@@ -202,7 +208,7 @@ const sponsors: Sponsors = {
           "name": "Amazon Web Services",
           "url": "https://devopsdays.org/",
           "logo": "/belemdevopsdays/sponsors/amazon-web-services.png"
-        },
+        }
       ]
     }
   ]

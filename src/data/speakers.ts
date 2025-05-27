@@ -2,6 +2,7 @@ export interface SocialMedia {
   twitter?: string;
   linkedin?: string;
   github?: string;
+  instagram?: string;
 }
 
 export interface Speaker {
@@ -17,18 +18,6 @@ export interface Speaker {
 
 const speakers: Speaker[] = [
   {
-    id: "leticia-dornelas",
-    name: "Letícia Dornelas",
-    bio: "Letícia tem mais de 10 anos de atuação na área de tecnologia. Atualmente, desempenha o cargo de Arquiteta de Soluções na AWS, onde apoia clientes do mercado financeiro. Formada pelo IFSP, tem interesse especial por temas como IA Generativa, DevOps, Arquitetura Orientada a Eventos e Serverless.",
-    company: "Amazon Web Services",
-    photo: "/belemdevopsdays/speakers/leticia-dornelas.jpg",
-    role: "Solutions Architect",
-    social: {
-      linkedin: "https://www.linkedin.com/in/leticia-dornelas/"
-    },
-    isKeynote: true,
-  },
-  {
     id: "marcelio-leal",
     name: "Marcelio Leal",
     bio: "Com uma trajetória inspiradora, Marcelio é mestre pela UFPA e já passou por gigantes como Amazon e Nubank. Além disso, é cofundador das startups Bhub, Onsee e TS9, e advisor na E-station e Caic. Apaixonado por Software Livre, comunidades e educação, Marcelio é um membro ativo do ecossistema de inovação e startups.",
@@ -39,6 +28,19 @@ const speakers: Speaker[] = [
       linkedin: "https://www.linkedin.com/in/marcelio-leal/"
     },
     isKeynote: true
+  },
+  {
+    id: "leticia-dornelas",
+    name: "Letícia Dornelas",
+    bio: "Letícia tem mais de 10 anos de atuação na área de tecnologia. Atualmente, desempenha o cargo de Arquiteta de Soluções na AWS, onde apoia clientes do mercado financeiro. Formada pelo IFSP, tem interesse especial por temas como IA Generativa, DevOps, Arquitetura Orientada a Eventos e Serverless.",
+    company: "Amazon Web Services",
+    photo: "/belemdevopsdays/speakers/leticia-dornelas.jpg",
+    role: "Solutions Architect",
+    social: {
+      linkedin: "https://www.linkedin.com/in/leticia-dornelas/",
+      instagram: "https://www.instagram.com/levilinux/"
+    },
+    isKeynote: true,
   },
   {
     id: "levi-leopoldino",
@@ -62,13 +64,45 @@ const speakers: Speaker[] = [
     }
   },
   {
+    id: "tiago-danin",
+    name: "Tiago Danin",
+    bio: "Sou Desenvolvedor Mobile com mais de 5 anos de experiência, atualmente componho o time da Idopterlabs, também sou pesquisando de segurança por conta própria e curto tudo que envolve tecnologia, inovação e automação. Trabalho com Flutter, Kotlin, Swift, Obj-C, React Native e Javascript, mas também já mexi com frontend, backend e até app pra desktop já fiz. Ultimamente, tô mergulhando em Marketing Digital e Gerência de Produtos para expandir os horizontes além do código. Nas horas vagas, correr pelas ruas, jogar no computador e uma boa música. Tô sempre buscando aprender mais, me desafiar e curtir o caminho.",
+    company: "Idopterlabs",
+    photo: "/belemdevopsdays/speakers/tiago-danin.jpeg",
+    social: {
+      linkedin: "https://www.linkedin.com/in/tiagodanin/",
+      instagram: "https://www.instagram.com/tiagodanin/"
+    }
+  },
+  {
+    "id": "lucas-ribeiro",
+    "name": "Lucas Ribeiro",
+    "bio": "Engenheiro mecânico formado pela Escola Politécnica da UFRJ, com mestrado em engenharia elétrica pela Escola Politécnica da USP e pela University of Twente. Desde 2019, atua de forma interdisciplinar no desenvolvimento de projetos de P&D no Centro Interdisciplinar em Tecnologias Interativas da Universidade de São Paulo (CITI-USP), com foco em soluções de Internet das Coisas (IoT) e visão computacional. É professor nos cursos de Sistemas de Informação, Engenharia da Computação e Mecatrônica na FIAP, e também Instrutor Sênior na Escola de Programação e DevOps da Alura, com ênfase em formações e conteúdos de DevOps. De 2022 a 2024, foi instrutor e pesquisador na área de IoT no Samsung OCEAN, em São Paulo.",
+    "company": "Alura",
+    "photo": "/belemdevopsdays/speakers/lucas-ribeiro.jpg",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/lucasribeiromata/"
+    }
+  },
+  {
     id: "marcelo-sa",
     name: "Marcelo Sá",
     bio: "Com uma trajetória que se estende desde 1996 na indústria de TI, sou o CEO da Jambu Tecnologia, Analista de Negócios e Professor de Engenharia de Software. Minha carreira é pautada pela gestão de projetos adotando práticas agilistas e a adoção de tecnologias livres e abertas, destacando-se na engenharia de sistemas no contexto das infraestruturas publicas digitais e Inteligencia Artificial em redes transacionais.\n\nNa vanguarda da inovação tecnológica, minha missão é liderar equipes para entregar soluções que impulsionem o crescimento, sustentabilidade e a qualidade no setor do varejo, educação, saúde e fintech. Com competências consolidadas em Engenharia do Caos, Redes Abertas Transacionais, IA, Blockchain/Web3 e Sistemas de Software, contribuo significativamente para projetos que moldam o futuro da tecnologia da informação e comunicação.",
     company: "Jambu Tecnologia",
     photo: "/belemdevopsdays/speakers/marcelo-sa.jpg",
     social: {
-      linkedin: "https://www.linkedin.com/in/marcelosa/"
+      linkedin: "https://www.linkedin.com/in/marcelosa/",
+      instagram: "https://www.instagram.com/marcelordesa/"
+    }
+  },
+  {
+    id: "diego-brito",
+    name: "Diego Brito",
+    bio: "Hoje, lidero a equipe de Arquitetura em TI no Banpará, olhando a TI sob o ponto de vista de governança, definindo padrões, controles e métricas. Acredito que apenas mudanças institucinalizadas, alinhadas a estratégia e impulsionadas por excelências individuais, podem gerar um sucesso efetivo, otimizado e sustentável. Há 11 anos, venho fazendo de tudo um pouco. Começando com webdesign, já atuei como desenvolvedor frontend, backend, BI e o que mais apareceu. Também já usei de tudo, mas majoritariamente Java, C#, Angular e CSS.",
+    company: "Banpará",
+    photo: "/belemdevopsdays/speakers/diego-brito.jpg",
+    social: {
+      linkedin: "https://www.linkedin.com/in/diegonobri/"
     }
   },
   {

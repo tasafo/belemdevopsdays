@@ -30,7 +30,7 @@ const talks: TalksData = {
     {
       "id": "credenciamento-e-cafe-da-manha",
       "title": "Credenciamento e Café da Manhã",
-      "time": "09:00",
+      "time": "09:00 - 09:30",
       "type": "break",
       "track": "main",
       "date": "2025-06-07"
@@ -38,23 +38,24 @@ const talks: TalksData = {
     {
       "id": "abertura",
       "title": "Abertura",
-      "time": "09:30",
+      "time": "09:30 - 09:45",
       "type": "other",
       "track": "main",
-      "date": "2025-06-07"
+      "date": "2025-06-07",
     },
     {
       "id": "keynote-abertura",
       "title": "Keynote de Abertura",
-      "time": "09:45",
+      "time": "09:45 - 10:30",
       "type": "keynote",
       "track": "main",
-      "date": "2025-06-07"
+      "date": "2025-06-07",
+      "speaker_id": "marcelio-leal"
     },
     {
       "id": "devops-career-2025",
       "title": "Desvendando a Carreira em DevOps: Tendências, Habilidades e Oportunidades 2025",
-      "time": "10:35",
+      "time": "10:35 - 11:00",
       "type": "talk",
       "track": "main",
       "date": "2025-06-07",
@@ -64,7 +65,7 @@ const talks: TalksData = {
     {
       "id": "kubevirt-gitops",
       "title": "Dos Silos à Automação: VMs no Kubernetes com KubeVirt e GitOps",
-      "time": "11:05",
+      "time": "11:05 - 11:30",
       "type": "talk",
       "track": "main",
       "date": "2025-06-07",
@@ -72,17 +73,37 @@ const talks: TalksData = {
       "description": "A palestra apresenta como o KubeVirt permite executar máquinas virtuais dentro do Kubernetes, integrando sistemas legados ao fluxo GitOps com Infraestrutura como Código (IaC). Com demonstrações práticas, mostra como automatizar, versionar e implantar VMs com ArgoCD, oferecendo uma solução moderna e unificada para ambientes híbridos sem reescrever código legado."
     },
     {
+      "id": "mobile-feature-flags",
+      "title": "O papel das Feature Flags na entrega contínua de Aplicativos Mobile",
+      "time": "11:35 - 12:00",
+      "type": "talk",
+      "track": "main",
+      "date": "2025-06-07",
+      "speaker_id": "tiago-danin",
+      "description": "Transforme seu fluxo de CI/CD mobile em uma poderosa ferramenta para experimentação contínua. Vamos explorar como utilizar Feature Flags e testes A/B para validar funcionalidades, personalizar a experiência do usuário e aumentar as vendas, sem depender de novos lançamentos. Além disso, discutiremos como realizar rollbacks de forma eficiente, garantindo a estabilidade do app. Com exemplos práticos e insights reais, você aprenderá a integrar essas práticas ao DevOps, tomar decisões rápidas e otimizar o crescimento do seu app de maneira estratégica."
+    },
+    {
       "id": "almoco",
       "title": "Pausa para o Almoço",
-      "time": "12:00",
+      "time": "12:00 - 13:00",
       "type": "break",
       "track": "main",
       "date": "2025-06-07"
     },
     {
+      "id": "mlops-continuous-development-deployment",
+      "title": "MLOps: desenvolvimento e implantação contínua de modelos de machine learning",
+      "time": "13:00 - 13:25",
+      "type": "talk",
+      "track": "main",
+      "date": "2025-06-07",
+      "speaker_id": "lucas-ribeiro",
+      "description": "Nesta palestra, exploraremos como a aplicação de MLOps (Machine Learning Operations) pode automatizar e otimizar processos ao longo do ciclo de vida de modelos de inteligência artificial, facilitando a melhoria contínua de modelos implantados em diversas aplicações."
+    },
+    {
       "id": "devops-infraestruturas-publicas",
       "title": "DevOps de Infraestruturas Publicas Digitais: o desafio de orquestrar e manter seguros ambientes que escalam em nível populacional",
-      "time": "13:30",
+      "time": "13:30 - 13:55",
       "type": "talk",
       "track": "main",
       "date": "2025-06-07",
@@ -90,9 +111,19 @@ const talks: TalksData = {
       "description": "A palestra apresenta os desafios técnicos e operacionais da Rede Belém Aberta, a primeira infraestrutura pública digital para educação com protocolo Beckn na América Latina. Serão abordadas estratégias de automação, observabilidade e segurança em ambientes que atendem a milhões, com foco em arquitetura, IaC e governança na nuvem pública para garantir resiliência, escalabilidade e compliance."
     },
     {
+      "id": "botando-ordem-na-casa-devops-banpara",
+      "title": "Botando ordem na casa! A jornada DevOps no Banpará (até agora).",
+      "time": "14:00 - 14:25",
+      "type": "talk",
+      "track": "main",
+      "date": "2025-06-07",
+      "speaker_id": "diego-brito",
+      "description": "Discutiremos abordagens para a implementação de pipelines eficientes que integram preparação de dados, treinamento, deploy e monitoramento de modelos, com o objetivo de melhorar a performance e reduzir o tempo de entrega em ambientes de produção. A palestra será baseada em casos práticos de projetos de visão computacional que lidam com grandes volumes de dados e processamento intensivo."
+    },
+    {
       "id": "infraestrutura-como-software",
       "title": "Infraestrutura como Software: O Futuro do Gerenciamento do Ciclo de Vida de Infraestruturas em Nuvem",
-      "time": "14:30",
+      "time": "14:30 - 14:55",
       "type": "talk",
       "track": "main",
       "date": "2025-06-07",
@@ -102,7 +133,7 @@ const talks: TalksData = {
     {
       "id": "coffee-break",
       "title": "Coffee-break",
-      "time": "15:00",
+      "time": "15:00 - 15:40",
       "type": "break",
       "track": "main",
       "date": "2025-06-07"
@@ -110,7 +141,7 @@ const talks: TalksData = {
     {
       "id": "fishbowl",
       "title": "Fishbowl",
-      "time": "15:40",
+      "time": "15:40 - 16:30",
       "type": "other",
       "track": "main",
       "date": "2025-06-07"
@@ -118,15 +149,16 @@ const talks: TalksData = {
     {
       "id": "keynote-encerramento",
       "title": "Keynote de Encerramento",
-      "time": "16:30",
+      "time": "16:30 - 17:15",
       "type": "keynote",
       "track": "main",
-      "date": "2025-06-07"
+      "date": "2025-06-07",
+      "speaker_id": "leticia-dornelas"
     },
     {
       "id": "encerramento-sorteios",
       "title": "Encerramento e Sorteios",
-      "time": "17:20",
+      "time": "17:20 - 18:00",
       "type": "other",
       "track": "main",
       "date": "2025-06-07"
