@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Twitter, Linkedin, Github } from 'lucide-react';
+import { Twitter, Linkedin, Github, Instagram } from 'lucide-react';
 import { Speaker } from '@/data/speakers';
 
 interface SpeakerCardProps {
@@ -50,6 +50,17 @@ export default function SpeakerCard({ speaker }: SpeakerCardProps) {
               onClick={(e) => e.stopPropagation()}
             >
               <Linkedin size={20} />
+            </a>
+          )}
+          {speaker.social.instagram && (
+            <a
+              href={speaker.social.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-700 hover:text-blue-800"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Instagram size={20} />
             </a>
           )}
           {speaker.social.github && (

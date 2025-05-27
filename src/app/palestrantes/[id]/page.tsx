@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import speakers from '@/data/speakers';
 import talks from '@/data/talks';
 import Image from 'next/image';
-import { Twitter, Linkedin, Github, Mail, Calendar } from 'lucide-react';
+import { Twitter, Linkedin, Github, Mail, Calendar, Instagram } from 'lucide-react';
 import Link from 'next/link';
 
 type Props = {
@@ -88,6 +88,11 @@ export default function SpeakerDetailPage({ params }: Props) {
                 {speaker.social.linkedin && (
                   <a href={speaker.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-800">
                     <Linkedin size={24} />
+                  </a>
+                )}
+                {speaker.social.instagram && (
+                  <a href={speaker.social.instagram} target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-800">
+                    <Instagram size={24} />
                   </a>
                 )}
                 {speaker.social.github && (
