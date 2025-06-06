@@ -37,8 +37,7 @@ const speakers: Speaker[] = [
     photo: "/belemdevopsdays/speakers/leticia-dornelas.jpg",
     role: "Solutions Architect",
     social: {
-      linkedin: "https://www.linkedin.com/in/leticia-dornelas/",
-      instagram: "https://www.instagram.com/levilinux/"
+      linkedin: "https://www.linkedin.com/in/leticia-dornelas/"
     },
     isKeynote: true,
   },
@@ -49,7 +48,8 @@ const speakers: Speaker[] = [
     company: "Matera",
     photo: "/belemdevopsdays/speakers/levi-leopoldino.jpg",
     social: {
-      linkedin: "https://www.linkedin.com/in/levinux/"
+      linkedin: "https://www.linkedin.com/in/levinux/",
+      instagram: "https://www.instagram.com/levilinux/"
     }
   },
   {
