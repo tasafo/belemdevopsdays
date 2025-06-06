@@ -57,7 +57,7 @@ export default function TalkCard({ talk }: TalkCardProps) {
     </div>
   );
   
-  if (isTalk) {
+  if (isTalk || isKeynote) {
     return (
       <Link
         href={`/programacao/${talk.id}`}

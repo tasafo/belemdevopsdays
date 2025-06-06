@@ -45,7 +45,7 @@ const talks: TalksData = {
     },
     {
       "id": "keynote-abertura",
-      "title": "Keynote de Abertura",
+      "title": "Keynote: É preciso dar um jeito meu amigo - Controlando a Carga Cognitiva e Complexidade em DevEx (e IA) em uma Scale-up Startup",
       "time": "09:45 - 10:30",
       "type": "keynote",
       "track": "main",
@@ -148,7 +148,7 @@ const talks: TalksData = {
     },
     {
       "id": "keynote-encerramento",
-      "title": "Keynote de Encerramento",
+      "title": "Keynote: Como Integrar IA Generativa ao Ciclo DevOps com AWS",
       "time": "16:30 - 17:15",
       "type": "keynote",
       "track": "main",

@@ -16,7 +16,7 @@ export async function generateStaticParams() {
   }
 
   return talks.talks
-    .filter(talk => talk.type === 'talk')
+    .filter(talk => talk.type === 'talk' || talk.type === 'keynote')
     .map((talk) => ({
       id: talk.id,
     }));
