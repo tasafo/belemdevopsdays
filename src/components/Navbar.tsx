@@ -24,14 +24,14 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled
+      className={`w-full transition-all duration-300 ${isScrolled
           ? 'bg-white shadow-md py-2'
           : 'bg-transparent py-4'
         }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
-          <Link href="/" className="text-primary font-bold text-xl flex items-center flex-shrink-0">
+          <Link href="/home" className="text-primary font-bold text-xl flex items-center flex-shrink-0">
             <img
               src="/belemdevopsdays/logo.svg"
               alt="DevOpsDays Belém Logo"
@@ -80,7 +80,7 @@ const Navbar = () => {
           <div className="lg:hidden mt-4 bg-white rounded-lg shadow-lg p-4 left-4 right-4 top-full z-50">
             <div className="flex flex-col space-y-4">
               <Link
-                href="/"
+                href="/home"
                 className="text-gray-800 hover:text-primary transition-colors py-2"
                 onClick={() => setIsOpen(false)}
               >

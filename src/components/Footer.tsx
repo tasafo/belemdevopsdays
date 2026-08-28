@@ -36,7 +36,7 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4 text-left">Links Úteis</h3>
             <ul className="space-y-2 text-left">
               <li>
-                <Link href="/" className="hover:text-secondary-light transition-colors">
+                <Link href="/home" className="hover:text-secondary-light transition-colors">
                   Home
                 </Link>
               </li>
